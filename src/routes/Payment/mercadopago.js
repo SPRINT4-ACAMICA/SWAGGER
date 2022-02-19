@@ -6,14 +6,31 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
-import Pedido from '../../models/pedidos.model.js'
+import * as Pedido from "../../controllers/pedidos.controller.js";
+
+const Callback = (res) => (err, result) => {
+  if (err) {
+    console.log("error", err);
+    res.status(500).json({ error: err });
+  } else {
+    console.log(result);
+    let elemento = result[result.length - 1];
+    //let datos = elemento.producto[0];
+    //info.push(datos);
+    console.log(elemento);
+  }
+};
 
 // Agrega credenciales
 configure({
   access_token: process.env.MERCADOPAGO_TOKEN,
 });
 
-router.get("/orders", function (req, res) {
+router.get("/orders", async function (req, res) {
+  Pedido.Pedidos(Callback(res));
+});
+
+/**router.get("/orders", function (req, res) {
   try {
     const pedidos = await Pedido.find();
     if (pedidos) {
@@ -22,9 +39,9 @@ router.get("/orders", function (req, res) {
       console.log('No hay pedidos');
     }
   } catch (error) {
-    res.status(404).json(error);
+    console.log(error);
   }
-});
+});**/
 
 router.post("/pago", function (req, res) {
   console.log("New request POST to /pago");
