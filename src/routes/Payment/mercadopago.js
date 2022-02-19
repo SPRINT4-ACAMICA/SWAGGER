@@ -6,7 +6,7 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
-import Pedidos from "../../controllers/pedidos.controller.js";
+import { Pedidos } from "../../controllers/pedidos.controller.js";
 
 
 
