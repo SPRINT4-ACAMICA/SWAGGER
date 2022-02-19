@@ -29,7 +29,7 @@ app.set('puerto', data.port);
 
 app.use('/usuarios', usuariosRoutes);
 app.use('/productos', productosRoutes);
-app.use('/pedidos', ordenesRoutes);
+app.use('/mercadopago', ordenesRoutes);
 app.use(payment_routes);
 app.use(public_routes);
 
