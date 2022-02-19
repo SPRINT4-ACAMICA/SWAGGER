@@ -9,7 +9,7 @@ export const Pedidos = async (req, res) => {
   try {
     await Pedido.find();
     /**if (pedidos) {
-      //const datos = pedidos[pedidos.length-1].pedidos;
+      const datos = pedidos[pedidos.length-1].pedidos;
       res.json(pedidos);
     } else {
       res.status(400).json({ msg: "Faltan Datos" });
