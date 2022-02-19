@@ -8,7 +8,8 @@ import data from './config.js'
 import usuariosRoutes from './routes/usuarios.routes.js';
 import productosRoutes from './routes/productos.routes.js';
 import ordenesRoutes from './routes/pedidos.routes.js';
-import MediosdePagoRoutes from './routes/MediosdePago.routes.js';
+import public_routes from './routes/public.js';
+import payment_routes from './routes/Payment/index.js';
 import * as options from './utils/swagger.js';
 
 const swaggerSpecs = swaggerJSDoc(options.swaggerOptions);
@@ -29,7 +30,8 @@ app.set('puerto', data.port);
 app.use('/usuarios', usuariosRoutes);
 app.use('/productos', productosRoutes);
 app.use('/pedidos', ordenesRoutes);
-app.use('/mediosdepago', MediosdePagoRoutes);
+app.use(payment_routes);
+app.use(public_routes);
 
 app.listen(app.get('puerto'), () => {
     console.log('Escuchando en el puerto ', app.get('puerto'));

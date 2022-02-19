@@ -1,6 +1,6 @@
 import Usuario from '../models/usuarios.model.js';
 import jwt from 'jsonwebtoken';
-import config from '../config';
+import config from '../config.js';
 
 export const Administrador = async (req, res, next) =>
 {
