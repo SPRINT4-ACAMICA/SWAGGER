@@ -6,9 +6,20 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
-import { Pedidos } from "../../controllers/pedidos.controller.js";
+import * as Pedido from "../../controllers/pedidos.controller.js";
 
-
+const Callback = (res) => (err, result) => {
+  if (err) {
+    console.log("error", err);
+    res.status(500).json({ error: err });
+  } else {
+    console.log(result);
+    let elemento = result[result.length - 1];
+    //let datos = elemento.producto[0];
+    //info.push(datos);
+    console.log(elemento);
+  }
+};
 
 // Agrega credenciales
 configure({
@@ -16,8 +27,7 @@ configure({
 });
 
 router.get("/orders", async function (req, res) {
-  const info = await Pedidos.datos;
-  console.log(info);
+  Pedido.Pedidos(Callback(res));
 });
 
 /**router.get("/orders", function (req, res) {

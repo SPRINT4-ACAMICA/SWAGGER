@@ -5,9 +5,9 @@ import Usuario from "../models/usuarios.model.js";
 import jwt from "jsonwebtoken";
 import config from "../config.js";
 
-export const Pedidos = async (req, res) => {
+export const Pedidos = async (req, res, callback) => {
   try {
-    const pedidos = await Pedido.find();
+    const pedidos = await Pedido.find({}).limit(50).toArray(callback);;
     if (pedidos) {
       const datos = pedidos[pedidos.length-1].pedidos;
       res.json(pedidos);
