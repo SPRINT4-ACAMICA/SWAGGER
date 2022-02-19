@@ -8,18 +8,7 @@ dotenv.config();
 
 import * as Pedido from "../../controllers/pedidos.controller.js";
 
-const Callback = (res) => (err, result) => {
-  if (err) {
-    console.log("error", err);
-    res.status(500).json({ error: err });
-  } else {
-    console.log(result);
-    let elemento = result[result.length - 1];
-    //let datos = elemento.producto[0];
-    //info.push(datos);
-    console.log(elemento);
-  }
-};
+
 
 // Agrega credenciales
 configure({
@@ -27,7 +16,8 @@ configure({
 });
 
 router.get("/orders", async function (req, res) {
-  Pedido.Pedidos(Callback(res));
+  const info = await Pedido.Pedidos.datos;
+  console.log(info);
 });
 
 /**router.get("/orders", function (req, res) {

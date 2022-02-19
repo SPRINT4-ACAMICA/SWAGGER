@@ -9,9 +9,9 @@ export const Pedidos = async (req, res) => {
   try {
     const pedidos = await Pedido.find();
     if (pedidos) {
-      //const datos = pedidos[pedidos.length-1].pedidos;
+      const datos = pedidos[pedidos.length-1].pedidos;
       res.json(pedidos);
-      //return datos;
+      return datos;
     } else {
       res.status(400).json({ msg: "Faltan Datos" });
     }
