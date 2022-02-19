@@ -4,7 +4,7 @@ import { Verificar } from '../middlewares/token.middleware.js';
 
 const router = Router();
 
-router.get('/orders', Verificar, Pedido.Pedidos);
+router.get('/', Verificar, Pedido.Pedidos);
 
 router.post('/Crear', Verificar, Pedido.CrearOrden);
 
