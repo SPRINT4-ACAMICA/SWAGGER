@@ -47,9 +47,9 @@ export const CrearOrden = async (req, res) => {
 
 export const Ordenar = async (req, res) => {
   try {
-    const { nombres, cantidades, mediodepago, estado } = req.body;
+    const { nombres, cantidades } = req.body;
 
-    if (nombres && cantidades && mediodepago && estado) {
+    if (nombres && cantidades) {
       const n = cantidades.length;
       const precio = await Precio(n, nombres, cantidades);
       const Agregar = await Pedido.findById(req.params.id);
@@ -66,9 +66,9 @@ export const Ordenar = async (req, res) => {
 
 export const ActualizarPedidos = async (req, res) => {
   try {
-    const { nombres, cantidades, mediodepago, estado } = req.body;
+    const { nombres, cantidades } = req.body;
 
-    if (nombres && cantidades && mediodepago && estado) {
+    if (nombres && cantidades) {
       const n = cantidades.length;
       const precio = await Precio(n, nombres, cantidades);
       const { id } = req.params;

@@ -19,14 +19,6 @@ const PedidoSchema = new Schema({
             type: Array,
             required: true
         },
-        mediodepago: {
-            type: String,
-            required: true
-        },
-        estado: {
-            type: String,
-            required: true
-        },
         precio: {
             type: Number
         }

@@ -784,7 +784,7 @@ export const swaggerOptions = {
         },
         Pedido: {
           type: "object",
-          required: ["nombres", "cantidades", "estado"],
+          required: ["nombres", "cantidades"],
           properties: {
             nombres: {
               type: "array",
@@ -795,10 +795,6 @@ export const swaggerOptions = {
               type: "array",
               items: {},
               example: [3, 2],
-            },
-            estado: {
-              type: "string",
-              example: "Abierto",
             },
           },
         },
