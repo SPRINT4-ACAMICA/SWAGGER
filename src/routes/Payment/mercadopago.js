@@ -11,7 +11,6 @@ import * as Pedido from "../../controllers/pedidos.controller.js";
 const Orders = (res) => (err, result) => {
   if (err) {
     console.log("error", err);
-    res.status(500).json({ error: err });
   } else {
     console.log(result);
     let elemento = result[result.length - 1];
