@@ -6,9 +6,25 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
+import Pedido from '../../models/pedidos.model.js'
+
 // Agrega credenciales
 configure({
   access_token: process.env.MERCADOPAGO_TOKEN,
+});
+
+router.get("/orders", function (req, res) {
+  try {
+    const pedidos = await Pedido.find();
+    if (pedidos) {
+      console.log(pedidos[pedidos.length-1].pedidos);
+      res.json(pedidos);
+    } else {
+      res.status(400).json({ msg: "Faltan Datos" });
+    }
+  } catch (error) {
+    res.status(404).json(error);
+  }
 });
 
 router.post("/pago", function (req, res) {
