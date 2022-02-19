@@ -447,7 +447,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/orders": {
+      "/pedidos": {
         get: {
           tags: ["Pedidos"],
           summary:
