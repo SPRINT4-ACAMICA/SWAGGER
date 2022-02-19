@@ -15,7 +15,7 @@ export const Pedidos = async (req, res) => {
       res.status(400).json({ msg: "Faltan Datos" });
     }
   } catch (error) {
-    res.status(404).json(error);
+    res.json(error);
   }
 }
 
