@@ -447,7 +447,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/mercadopago": {
+      "/mercadopago/orders": {
         get: {
           tags: ["Pedidos"],
           summary:
