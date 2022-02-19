@@ -6,7 +6,7 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
-import * as Pedido from "../../controllers/pedidos.controller.js";
+import Pedidos from "../../controllers/pedidos.controller.js";
 
 
 
@@ -16,7 +16,7 @@ configure({
 });
 
 router.get("/orders", async function (req, res) {
-  const info = await Pedido.Pedidos.datos;
+  const info = await Pedidos.datos;
   console.log(info);
 });
 
