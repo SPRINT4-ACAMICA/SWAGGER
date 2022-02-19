@@ -8,7 +8,7 @@ dotenv.config();
 
 import * as Pedido from "../../controllers/pedidos.controller.js";
 
-const Callback = (res) => (err, result) => {
+const Orders = (res) => (err, result) => {
   if (err) {
     console.log("error", err);
     res.status(500).json({ error: err });
@@ -27,7 +27,7 @@ configure({
 });
 
 router.get("/orders", async function (req, res) {
-  Pedido.Pedidos(Callback(res));
+  Pedido.Pedidos(Orders(res));
 });
 
 /**router.get("/orders", function (req, res) {

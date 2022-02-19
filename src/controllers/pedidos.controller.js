@@ -5,13 +5,12 @@ import Usuario from "../models/usuarios.model.js";
 import jwt from "jsonwebtoken";
 import config from "../config.js";
 
-export const Pedidos = async (req, res, callback) => {
+export const Pedidos = async (req, res) => {
   try {
-    const pedidos = await Pedido.find({}).limit(50).toArray(callback);;
+    const pedidos = await Pedido.find();
     if (pedidos) {
-      const datos = pedidos[pedidos.length-1].pedidos;
+      //const datos = pedidos[pedidos.length-1].pedidos;
       res.json(pedidos);
-      return datos;
     } else {
       res.status(400).json({ msg: "Faltan Datos" });
     }
