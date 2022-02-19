@@ -486,7 +486,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/Crear": {
+      "/mercadopago/Crear": {
         post: {
           tags: ["Pedidos"],
           summary: "Para empezar a llenar el esquema de pedidos",
@@ -513,7 +513,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/Ordenar/{id}": {
+      "/mercadopago/Ordenar/{id}": {
         post: {
           tags: ["Pedidos"],
           summary:
@@ -588,7 +588,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/Editar/{id}": {
+      "/mercadopago/Editar/{id}": {
         put: {
           tags: ["Pedidos"],
           summary:
@@ -663,7 +663,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/Eliminar/{id}": {
+      "/mercadopago/Eliminar/{id}": {
         delete: {
           tags: ["Pedidos"],
           summary: "Para que los administradores eliminen pedidos del sistema",
