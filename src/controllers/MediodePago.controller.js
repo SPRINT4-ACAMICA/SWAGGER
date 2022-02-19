@@ -1,4 +1,4 @@
-import MediodePago from '../models/MediodePago.model';
+import MediodePago from '../models/MediodePago.model.js';
 
 export const MediosdePago = async (req, res) => {
     try {

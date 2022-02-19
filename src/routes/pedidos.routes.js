@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import * as Pedido from '../controllers/pedidos.controller';
-import { Verificar } from '../middlewares/token.middleware';
+import * as Pedido from '../controllers/pedidos.controller.js';
+import { Verificar } from '../middlewares/token.middleware.js';
 
 const router = Router();
 

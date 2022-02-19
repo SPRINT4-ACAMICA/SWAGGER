@@ -1,7 +1,7 @@
-import Pedido from '../models/pedidos.model';
-import { Precio } from '../controllers/precio.controller';
-import Usuario from '../models/usuarios.model';
-import MediodePago from '../models/MediodePago.model';
+import Pedido from '../models/pedidos.model.js';
+import { Precio } from '../controllers/precio.controller.js';
+import Usuario from '../models/usuarios.model.js';
+import MediodePago from '../models/MediodePago.model.js';
 
 import jwt from "jsonwebtoken";
 import config from "../config"; 

@@ -1,4 +1,4 @@
-import Usuario from '../models/usuarios.model';
+import Usuario from '../models/usuarios.model.js';
 import jwt from 'jsonwebtoken';
 import config from '../config';
 

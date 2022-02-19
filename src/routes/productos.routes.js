@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import { Administrador } from '../middlewares/administrador.middleware';
-import * as Productos from '../controllers/productos.controller';
+import { Administrador } from '../middlewares/administrador.middleware.js';
+import * as Productos from '../controllers/productos.controller.js';
 
 const router = Router();
 

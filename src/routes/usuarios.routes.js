@@ -1,7 +1,7 @@
 import { Router } from 'express';
-import * as Usuarios from '../controllers/usuarios.controller';
-import { Administrador } from '../middlewares/administrador.middleware';
-import { Verificar } from '../middlewares/token.middleware';
+import * as Usuarios from '../controllers/usuarios.controller.js';
+import { Administrador } from '../middlewares/administrador.middleware.js';
+import { Verificar } from '../middlewares/token.middleware.js';
 
 const router = Router();
 

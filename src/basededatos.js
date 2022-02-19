@@ -1,5 +1,4 @@
 import mongoose from 'mongoose';
-import 'regenerator-runtime/runtime';
 
 const stringConexion = process.env.DATABASE_URL;
 
