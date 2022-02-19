@@ -7,15 +7,15 @@ import config from "../config.js";
 
 export const Pedidos = async (req, res) => {
   try {
-    const pedidos = await Pedido.find();
-    if (pedidos) {
+    await Pedido.find();
+    /**if (pedidos) {
       //const datos = pedidos[pedidos.length-1].pedidos;
       res.json(pedidos);
     } else {
       res.status(400).json({ msg: "Faltan Datos" });
-    }
+    }**/
   } catch (error) {
-    console.log(error);
+    res.status(404).json(error);
   }
 }
 
