@@ -28,25 +28,6 @@ router.get(
     console.log(
       `Nombre de usuario: ${username.givenName} ${username.familyName}`
     );
-    const info = req.user._json;
-    const correo = info.email;
-    if (correo) {
-      const usuario = await Usuario.findOne({ correo });
-      /**contraseña = bcrypt.compare(
-        req.body.contraseña,
-        usuario.contraseña
-      ); **/
-      if (!usuario) {
-        //return res.status(401).send({ auth: false, token: null });
-        console.log("Usuario no encontrado");
-      } else {
-        const token = jwt.sign({ id: usuario._id }, config.secret, {
-          expiresIn: 60 * 60 * 24,
-        });
-        //res.status(200).json({ auth: true, token });
-        console.log(token);
-      }
-    }
     //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
 
