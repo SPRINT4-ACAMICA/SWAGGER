@@ -10,6 +10,8 @@ import productosRoutes from './routes/productos.routes.js';
 import ordenesRoutes from './routes/pedidos.routes.js';
 import public_routes from './routes/public.js';
 import payment_routes from './routes/Payment/index.js';
+import auth_routes from './routes/auth/index.js';
+import './services/index.js';
 import * as options from './utils/swagger.js';
 
 const swaggerSpecs = swaggerJSDoc(options.swaggerOptions);
@@ -32,6 +34,7 @@ app.use('/productos', productosRoutes);
 app.use('/pedidos', ordenesRoutes);
 app.use(payment_routes);
 app.use(public_routes);
+app.use(auth_routes);
 
 app.listen(app.get('puerto'), () => {
     console.log('Escuchando en el puerto ', app.get('puerto'));
