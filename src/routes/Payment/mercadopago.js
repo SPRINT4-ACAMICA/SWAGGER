@@ -1,31 +1,35 @@
+import Pedido from "../../models/pedidos.model.js"
+
 import { Router } from "express";
 const router = Router();
+
 import pkg from "mercadopago";
 const { configure, preferences } = pkg;
 
 import dotenv from "dotenv";
 dotenv.config();
 
-import * as Pedido from "../../controllers/pedidos.controller.js";
-
-/**const Orders = (res) => (err, result) => {
-  if (err) {
-    console.log("error", err);
-  } else {
-    console.log(result);
-    let elemento = result[result.length - 1];
-    //let datos = elemento.producto[0];
-    //info.push(datos);
-    console.log(elemento);
+const Pedidos = async (req, res) => {
+  try {
+    const pedidos = await Pedido.find();
+    if (pedidos) {
+      res.json(pedidos);
+      const datos = pedidos[pedidos.length-1].pedidos;
+      console.log(datos)
+    } else {
+      res.status(400).json({ msg: "Faltan Datos" });
+    }
+  } catch (error) {
+    res.status(404).json(error);
   }
-};**/
+}
 
 // Agrega credenciales
 configure({
   access_token: process.env.MERCADOPAGO_TOKEN,
 });
 
-router.get('/orders', Pedido.Pedidos);
+router.get('/orders', Pedidos);
 
 /**router.get("/orders", function (req, res) {
   try {

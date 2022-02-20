@@ -5,7 +5,7 @@ import Usuario from "../models/usuarios.model.js";
 import jwt from "jsonwebtoken";
 import config from "../config.js";
 
-export const Pedidos = async (req, res) => {
+/**export const Pedidos = async (req, res) => {
   try {
     const pedidos = await Pedido.find();
     if (pedidos) {
@@ -17,7 +17,7 @@ export const Pedidos = async (req, res) => {
   } catch (error) {
     res.status(404).json(error);
   }
-}
+}**/
 
 export const CrearOrden = async (req, res) => {
   try {
