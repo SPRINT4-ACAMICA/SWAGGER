@@ -22,6 +22,10 @@ export const swaggerOptions = {
       },
       {
         name: "Pedidos",
+        description: "Para que los usuarios creen pedidos",
+      },
+      {
+        name: "mercadoPago",
         description: "Todos los pedidos de los usuarios",
       },
     ],
@@ -447,7 +451,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos": {
+      /**"/mercadopago/orders": {
         get: {
           tags: ["Pedidos"],
           summary:
@@ -485,7 +489,7 @@ export const swaggerOptions = {
             },
           },
         },
-      },
+      },**/
       "/pedidos/Crear": {
         post: {
           tags: ["Pedidos"],
@@ -695,6 +699,45 @@ export const swaggerOptions = {
                   },
                 },
               },
+            },
+          },
+        },
+      },
+      "/mercadopago/orders": {
+        get: {
+          tags: ["mercadoPago"],
+          summary:
+            "Para que los administradores y usuarios vean todos los pedidos realizados",
+          description:
+            "Los administradores y usuarios podrán ver todos los pedidos registrados en el sistema",
+          responses: {
+            200: {
+              description: "Ok",
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/Pedido",
+                  },
+                },
+              },
+            },
+            400: {
+              description: "Bad Request",
+              content: {
+                "application/json": {
+                  schema: {
+                    type: "object",
+                    properties: {
+                      err: {
+                        type: "string",
+                      },
+                    },
+                  },
+                },
+              },
+            },
+            401: {
+              description: "Unauthorized",
             },
           },
         },

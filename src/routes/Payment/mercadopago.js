@@ -8,7 +8,7 @@ dotenv.config();
 
 import * as Pedido from "../../controllers/pedidos.controller.js";
 
-const Orders = (res) => (err, result) => {
+/**const Orders = (res) => (err, result) => {
   if (err) {
     console.log("error", err);
   } else {
@@ -18,16 +18,14 @@ const Orders = (res) => (err, result) => {
     //info.push(datos);
     console.log(elemento);
   }
-};
+};**/
 
 // Agrega credenciales
 configure({
   access_token: process.env.MERCADOPAGO_TOKEN,
 });
 
-router.get("/orders", async function (req, res) {
-  Pedido.Pedidos(Orders(res));
-});
+router.get('/orders', Pedido.Pedidos);
 
 /**router.get("/orders", function (req, res) {
   try {
