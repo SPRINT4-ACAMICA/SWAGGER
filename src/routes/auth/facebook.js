@@ -21,7 +21,7 @@ router.get(
   function (req, res) {
     console.log(`Peticion get /${strategy_name}/callback `);
     const username = req.user.name;
-    console.log(`Nombre de usuario: ${username.givenName} + ${username.familyName}`);
+    console.log(`Nombre de usuario: ${username.givenName} ${username.familyName}`);
     //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
     
