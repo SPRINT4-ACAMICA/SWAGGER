@@ -15,7 +15,7 @@ const Pedidos = async (req, res) => {
     if (pedidos) {
       res.json(pedidos);
       const datos = pedidos[pedidos.length-1].pedidos;
-      console.log(datos)
+      console.log(datos[datos.length-1].nombres)
     } else {
       res.status(400).json({ msg: "Faltan Datos" });
     }
