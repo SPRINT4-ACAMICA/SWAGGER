@@ -25,10 +25,9 @@ router.get(
   function (req, res) {
     console.log(`Peticion get /${strategy_name}/callback `);
     const username = req.user.displayName;
-    const correo = req.user.email;
-    (username == undefined) ? console.log(`usuario: ${correo}`) : console.log(`Nombre de usuario: ${username}`);
     const info = req.user._json;
     const correo = info.email;
+    (username == undefined) ? console.log(`usuario: ${correo}`) : console.log(`Nombre de usuario: ${username}`);
     if (correo) {
       const usuario = await Usuario.findOne({ correo });
       /**contraseña = bcrypt.compare(
