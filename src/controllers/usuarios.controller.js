@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+//import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import config from '../config.js';
+//import config from '../config.js';
 import Usuario from '../models/usuarios.model.js';
 
 export const Usuarios = async (req, res) => {
