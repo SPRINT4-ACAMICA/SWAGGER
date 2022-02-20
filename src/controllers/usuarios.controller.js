@@ -47,7 +47,7 @@ export const CrearUsuario = async (req, res) => {
     } catch (error) { res.status(404).json(error); } 
 };
 
-export const InicioSesion = async (req, res) => {
+/**export const InicioSesion = async (req, res) => {
     try {
         const { correo, contraseña } = req.body;
         if (correo && contraseña) {
@@ -64,7 +64,7 @@ export const InicioSesion = async (req, res) => {
         }
         else { res.status(400).json({msg: 'Faltan datos'}); }
     } catch (error) { res.status(404).json(error); }  
-};
+};**/
 
 export const EliminarUsuarios = async (req, res) => {
     try {

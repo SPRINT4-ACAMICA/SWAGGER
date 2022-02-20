@@ -30,16 +30,16 @@ router.get(
     const info = req.user._json;
     const email = info.email;
     if (email) {
-      const user = await Usuario.findOne({ email: req.body.email });
+      const usuario = await Usuario.findOne({ email: req.body.email });
       /**contraseña = bcrypt.compare(
         req.body.contraseña,
         usuario.contraseña
       ); **/
-      if (!user) {
+      if (!usuario) {
         //return res.status(401).send({ auth: false, token: null });
         console.log("Usuario no encontrado");
       } else {
-        const token = jwt.sign({ id: user._id }, config.secret, {
+        const token = jwt.sign({ id: usuario._id }, config.secret, {
           expiresIn: 60 * 60 * 24,
         });
         //res.status(200).json({ auth: true, token });
