@@ -32,9 +32,9 @@ router.get(
       `Nombre de usuario: ${username.givenName} ${username.familyName}`
     );
     const info = req.user.emails;
-    const email = info[info.length-1].value;
-    if (email) {
-      const usuario = await Usuario.findOne({ email: req.body.email });
+    const correo = info[info.length-1].value;
+    if (correo) {
+      const usuario = await Usuario.findOne({ correo });
       /**contraseña = bcrypt.compare(
         req.body.contraseña,
         usuario.contraseña

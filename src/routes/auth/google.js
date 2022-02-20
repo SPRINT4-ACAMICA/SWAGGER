@@ -28,9 +28,9 @@ router.get(
     const correo = req.user.email;
     (username == undefined) ? console.log(`usuario: ${correo}`) : console.log(`Nombre de usuario: ${username}`);
     const info = req.user._json;
-    const email = info.email;
-    if (email) {
-      const usuario = await Usuario.findOne({ email: req.body.email });
+    const correo = info.email;
+    if (correo) {
+      const usuario = await Usuario.findOne({ correo });
       /**contraseña = bcrypt.compare(
         req.body.contraseña,
         usuario.contraseña
