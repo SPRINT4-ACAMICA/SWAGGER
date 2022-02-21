@@ -10,24 +10,35 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
+let names = [];
+let quantities = [];
+let prices = [];
+let ordenes = [];
+
 const Pedidos = async (req, res) => {
   try {
     const pedidos = await Pedido.find();
     if (pedidos) {
       res.json(pedidos);
       const info = pedidos[pedidos.length - 1].pedidos;
-      const nombres = info[info.length-1].nombres;
-      const cantidades = info[info.length-1].cantidades;
+      const nombres = info[info.length - 1].nombres;
+      const cantidades = info[info.length - 1].cantidades;
       //console.log(nombres);
       const vector = await Producto.find({ nombre: { $in: nombres } });
-      const prices = vector.map((price) => price.precio);
-      console.log(prices);
-      console.log(nombres);
-      console.log(cantidades);
-      /**for (let index = 0; index < prices.length; index++) {
-        console.log(prices[index]);
-      }**/
-
+      const precios = vector.map((price) => price.precio);
+      //console.log(prices);
+      //console.log(nombres);
+      //console.log(cantidades);
+      for (let index = 0; index < prices.length; index++) {
+        let a = nombres[index];
+        names.push(a);
+        let b = cantidades[index];
+        quantities.push(b);
+        let c = precios[index];
+        prices.push(c);
+        ordenes[index].push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+      }
+      console.log(ordenes);
     } else {
       console.log("No hay pedidos para mostrar");
     }
@@ -43,19 +54,6 @@ configure({
 
 router.get("/orders", Pedidos);
 
-/**router.get("/orders", function (req, res) {
-  try {
-    const pedidos = await Pedido.find();
-    if (pedidos) {
-      console.log(pedidos[pedidos.length-1].pedidos);
-    } else {
-      console.log('No hay pedidos');
-    }
-  } catch (error) {
-    console.log(error);
-  }
-});**/
-
 router.post("/pago", function (req, res) {
   console.log("New request POST to /pago");
   // TODO: protect this route with a middleware
@@ -69,18 +67,13 @@ router.post("/pago", function (req, res) {
 
   // TODO: get items from the database
   const amount = req.body.amount;
-  let items = [
-    {
-      title: "iPhone 13 Max PRO",
-      unit_price: 20000,
-      quantity: 5,
-    },
-    {
-      title: "iPad",
-      unit_price: 12000,
-      quantity: 5,
-    },
-  ];
+
+  let items = [];
+
+  for (let index = 0; index < prices.length; index++) {
+    items[index].push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+  }
+  console.log(items);
 
   // Crea un objeto de preferencia
   let preference = {
