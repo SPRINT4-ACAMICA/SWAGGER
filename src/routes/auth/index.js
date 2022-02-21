@@ -1,7 +1,7 @@
 import { Router } from "express";
 const router = Router();
 import inicioSesionCorrecto from "../../middlewares/login.js";
-import { InicioSesion } from "../../controllers/usuarios.controller";
+import { InicioSesion } from "../../controllers/usuarios.controller.js";
 import google from "./google";
 import facebook from "./facebook";
 import linkedin from "./linkedin";
