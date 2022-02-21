@@ -29,7 +29,7 @@ const Pedidos = async (req, res) => {
       //console.log(prices);
       //console.log(nombres);
       //console.log(cantidades);
-      for (let index = 0; index < prices.length; index++) {
+      for (let index = 0; index < nombres.length; index++) {
         let a = nombres[index];
         names.push(a);
         let b = cantidades[index];
