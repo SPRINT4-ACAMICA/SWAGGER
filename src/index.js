@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import helmet from "helmet";
+import passport from "passport";
 import jwt from "jsonwebtoken";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
@@ -18,19 +18,17 @@ import config from "./config.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-const swaggerSpecs = swaggerJSDoc(options.swaggerOptions);
 const app = express();
-
-const cspDefaults = helmet.contentSecurityPolicy.getDefaultDirectives();
-delete cspDefaults["upgrade-insecure-requests"];
-app.use(
-  helmet({
-    contentSecurityPolicy: { directives: cspDefaults },
-  })
-);
 
 app.use(express.json());
 app.use(cors());
+app.use(passport.initialize());
+
+const swaggerSpecs = swaggerJSDoc(options.swaggerOptions);
+
+app.use(payment_routes);
+app.use(public_routes);
+app.use(auth_routes);
 
 app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 
@@ -55,12 +53,9 @@ app.use((err, req, res, _next) => {
 
 app.use("/productos", productosRoutes);
 app.use("/pedidos", ordenesRoutes);
-app.use(payment_routes);
-app.use(public_routes);
-app.use(auth_routes);
 
-app.listen(process.env.PORT, () => {
-  console.log(`Escuchando en el puerto ${process.env.PORT}`);
+app.listen(config.port, () => {
+  console.log(`Escuchando en el puerto ${config.port}`);
 });
 
 export default app;
