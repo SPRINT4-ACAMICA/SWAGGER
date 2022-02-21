@@ -2,10 +2,10 @@ import { Router } from "express";
 const router = Router();
 import inicioSesionCorrecto from "../../middlewares/login.js";
 import { InicioSesion } from "../../controllers/usuarios.controller.js";
-import google from "./google";
-import facebook from "./facebook";
-import linkedin from "./linkedin";
-import github from "./github";
+import google from "./google.js";
+import facebook from "./facebook.js";
+import linkedin from "./linkedin.js";
+import github from "./github.js";
 
 router.post("/Login", inicioSesionCorrecto, InicioSesion);
 
