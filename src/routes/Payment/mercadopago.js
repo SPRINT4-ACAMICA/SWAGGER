@@ -15,7 +15,9 @@ const Pedidos = async (req, res) => {
     const pedidos = await Pedido.find();
     if (pedidos) {
       res.json(pedidos);
-      const nombres = pedidos[pedidos.length - 1].pedidos.nombres;
+      const info = pedidos[pedidos.length - 1].pedidos;
+      const nombres = info.nombres;
+      console.log(nombres);
       const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
 
@@ -27,7 +29,7 @@ const Pedidos = async (req, res) => {
       console.log(precios);
       console.log(datos[datos.length - 1]);
     } else {
-      res.status(400).json({ msg: "Faltan Datos" });
+      res.status(400).json({ msg: "No hay pedidos para mostrar" });
     }
   } catch (error) {
     res.status(404).json(error);
