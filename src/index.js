@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import helmet from "helmet";
+import jwt from "jsonwebtoken";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import usuariosRoutes from "./routes/usuarios.routes.js";
@@ -10,8 +11,9 @@ import public_routes from "./routes/public.js";
 import payment_routes from "./routes/Payment/index.js";
 import auth_routes from "./routes/auth/index.js";
 import "./services/index.js";
-import * as options from "./utils/swagger.js";
 import "./basededatos.js";
+import * as options from "./utils/swagger.js";
+import config from "./config.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -41,15 +43,13 @@ app.use(public_routes);
 app.use(auth_routes);
 
 app.use(
-  expressJwt({
-    secret: configuracion.Contrasenia,
+  jwt({
+    secret: config.secret,
     algorithms: ["HS256"],
   }).unless({
     path: ["/Login", "/Registro"],
   })
 );
-
-app.use("/", loginRoutes);
 
 app.use((err, req, res, _next) => {
   if (err.name === "UnauthorizedError") {

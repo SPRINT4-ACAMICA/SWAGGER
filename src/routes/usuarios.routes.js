@@ -7,7 +7,7 @@ const router = Router();
 
 router.get('/', Verificar, Usuarios.Usuarios);
 
-router.post('/nuevos', Usuarios.CrearUsuario);
+router.post('/Registro', Usuarios.CrearUsuario);
 
 router.post('/Login', Usuarios.InicioSesion);
 

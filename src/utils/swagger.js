@@ -49,7 +49,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/usuarios/nuevos": {
+      "/usuarios/Registro": {
         post: {
           tags: ["Usuarios"],
           summary: "Para crear nuevos usuarios en el sistema",
