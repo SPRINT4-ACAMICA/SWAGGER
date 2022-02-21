@@ -20,10 +20,10 @@ const Pedidos = async (req, res) => {
       //console.log(nombres);
       const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
-
-      for (let index = 0; index < prices.length; index++) {
+      console.log(prices);
+      /**for (let index = 0; index < prices.length; index++) {
         console.log(prices[index]);
-      }
+      }**/
 
     } else {
       console.log("No hay pedidos para mostrar");
