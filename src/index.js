@@ -35,13 +35,6 @@ app.use(cors());
 app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 app.set("puerto", process.env.PORT);
 
-app.use("/usuarios", usuariosRoutes);
-app.use("/productos", productosRoutes);
-app.use("/pedidos", ordenesRoutes);
-app.use(payment_routes);
-app.use(public_routes);
-app.use(auth_routes);
-
 app.use(
   jwt({
     secret: config.secret,
@@ -51,6 +44,8 @@ app.use(
   })
 );
 
+app.use("/usuarios", usuariosRoutes);
+
 app.use((err, req, res, _next) => {
   if (err.name === "UnauthorizedError") {
     res.status(401).json("Token invalido");
@@ -58,6 +53,12 @@ app.use((err, req, res, _next) => {
     res.status(500).json("Internal server error");
   }
 });
+
+app.use("/productos", productosRoutes);
+app.use("/pedidos", ordenesRoutes);
+app.use(payment_routes);
+app.use(public_routes);
+app.use(auth_routes);
 
 app.listen(app.get("puerto"), () => {
   console.log("Escuchando en el puerto ", app.get("puerto"));
