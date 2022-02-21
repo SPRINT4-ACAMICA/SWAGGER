@@ -22,7 +22,7 @@ const Pedidos = async (req, res) => {
       const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
       console.log(prices);
-      console.log(vector);
+      console.log(nombres);
       console.log(cantidades);
       /**for (let index = 0; index < prices.length; index++) {
         console.log(prices[index]);
