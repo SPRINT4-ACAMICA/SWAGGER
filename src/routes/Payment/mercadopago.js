@@ -36,9 +36,9 @@ const Pedidos = async (req, res) => {
         quantities.push(b);
         let c = precios[index];
         prices.push(c);
-        ordenes.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+        //ordenes.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
       }
-      console.log(ordenes);
+      //console.log(ordenes);
     } else {
       console.log("No hay pedidos para mostrar");
     }
@@ -71,7 +71,7 @@ router.post("/pago", function (req, res) {
   let items = [];
 
   for (let index = 0; index < prices.length; index++) {
-    items[index].push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+    items.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
   }
   console.log(items);
 
