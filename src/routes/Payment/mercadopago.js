@@ -36,7 +36,7 @@ const Pedidos = async (req, res) => {
         quantities.push(b);
         let c = precios[index];
         prices.push(c);
-        ordenes.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })W  
+        ordenes.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
       }
       console.log(ordenes);
     } else {
