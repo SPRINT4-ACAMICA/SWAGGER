@@ -1,4 +1,5 @@
-import Pedido from "../../models/pedidos.model.js"
+import Pedido from "../../models/pedidos.model.js";
+import Producto from "../../models/productos.model.js";
 
 import { Router } from "express";
 const router = Router();
@@ -14,22 +15,31 @@ const Pedidos = async (req, res) => {
     const pedidos = await Pedido.find();
     if (pedidos) {
       res.json(pedidos);
-      const datos = pedidos[pedidos.length-1].pedidos;
-      console.log(datos[datos.length-1])
+      const nombres = pedidos[pedidos.length - 1].pedidos.nombres;
+      const vector = await Producto.find({ nombre: { $in: nombres } });
+      const prices = vector.map((price) => price.precio);
+
+      let precios = [];
+      for (let index = 0; index < n; index++) {
+        let p = prices[index];
+        precios.push(p);
+      }
+      console.log(precios);
+      console.log(datos[datos.length - 1]);
     } else {
       res.status(400).json({ msg: "Faltan Datos" });
     }
   } catch (error) {
     res.status(404).json(error);
   }
-}
+};
 
 // Agrega credenciales
 configure({
   access_token: process.env.MERCADOPAGO_TOKEN,
 });
 
-router.get('/orders', Pedidos);
+router.get("/orders", Pedidos);
 
 /**router.get("/orders", function (req, res) {
   try {
