@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import passport from "passport";
-import jwt from "jsonwebtoken";
+import expressJwt from "express-jwt";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
 import usuariosRoutes from "./routes/usuarios.routes.js";
@@ -33,7 +33,7 @@ app.use(auth_routes);
 app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 
 app.use(
-  jwt({
+  expressJwt({
     secret: config.secret,
     algorithms: ["HS256"],
   }).unless({
