@@ -33,7 +33,6 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
-app.set("puerto", process.env.PORT);
 
 app.use(
   jwt({
@@ -60,8 +59,8 @@ app.use(payment_routes);
 app.use(public_routes);
 app.use(auth_routes);
 
-app.listen(app.get("puerto"), () => {
-  console.log("Escuchando en el puerto ", app.get("puerto"));
+app.listen(process.env.PORT, () => {
+  console.log(`Escuchando en el puerto ${process.env.PORT}`);
 });
 
 export default app;
