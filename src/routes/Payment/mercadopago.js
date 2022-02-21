@@ -17,10 +17,13 @@ const Pedidos = async (req, res) => {
       res.json(pedidos);
       const info = pedidos[pedidos.length - 1].pedidos;
       const nombres = info[info.length-1].nombres;
+      const cantidades = info[info.length-1].cantidades;
       //console.log(nombres);
       const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
       console.log(prices);
+      console.log(vector);
+      console.log(cantidades);
       /**for (let index = 0; index < prices.length; index++) {
         console.log(prices[index]);
       }**/
