@@ -18,7 +18,7 @@ const Pedidos = async (req, res) => {
       const info = pedidos[pedidos.length - 1].pedidos;
       const nombres = info.nombres;
       console.log(nombres);
-      const vector = await Producto.find({ nombre: { $in: nombres } });
+      /**const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
 
       let precios = [];
@@ -27,7 +27,7 @@ const Pedidos = async (req, res) => {
         precios.push(p);
       }
       console.log(precios);
-      console.log(datos[datos.length - 1]);
+      console.log(datos[datos.length - 1]);**/
     } else {
       res.status(400).json({ msg: "No hay pedidos para mostrar" });
     }
