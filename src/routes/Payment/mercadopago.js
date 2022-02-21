@@ -68,10 +68,10 @@ router.post("/pago", function (req, res) {
   // TODO: get items from the database
   const amount = req.body.amount;
 
-  let items;
+  let items = [];
 
   for (let index = 0; index < names.length; index++) {
-    items = ordenes[index]
+    items[index] = ordenes[index]
   }
   console.log(items);
 
