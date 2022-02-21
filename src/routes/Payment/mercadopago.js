@@ -36,7 +36,7 @@ const Pedidos = async (req, res) => {
         quantities.push(b);
         let c = precios[index];
         prices.push(c);
-        //ordenes.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+        ordenes.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
       }
       //console.log(ordenes);
     } else {
@@ -68,10 +68,10 @@ router.post("/pago", function (req, res) {
   // TODO: get items from the database
   const amount = req.body.amount;
 
-  let items = [];
+  let items;
 
-  for (let index = 0; index < prices.length; index++) {
-    items.push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+  for (let index = 0; index < names.length; index++) {
+    items = ordenes[index]
   }
   console.log(items);
 
