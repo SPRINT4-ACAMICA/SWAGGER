@@ -3,8 +3,6 @@ import cors from "cors";
 import helmet from "helmet";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
-import "./basededatos.js";
-import data from "./config.js";
 import usuariosRoutes from "./routes/usuarios.routes.js";
 import productosRoutes from "./routes/productos.routes.js";
 import ordenesRoutes from "./routes/pedidos.routes.js";
@@ -13,6 +11,8 @@ import payment_routes from "./routes/Payment/index.js";
 import auth_routes from "./routes/auth/index.js";
 import "./services/index.js";
 import * as options from "./utils/swagger.js";
+import "./basededatos.js";
+
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -39,6 +39,25 @@ app.use("/pedidos", ordenesRoutes);
 app.use(payment_routes);
 app.use(public_routes);
 app.use(auth_routes);
+
+app.use(
+  expressJwt({
+    secret: configuracion.Contrasenia,
+    algorithms: ["HS256"],
+  }).unless({
+    path: ["/Login", "/Registro"],
+  })
+);
+
+app.use("/", loginRoutes);
+
+app.use((err, req, res, _next) => {
+  if (err.name === "UnauthorizedError") {
+    res.status(401).json("Token invalido");
+  } else {
+    res.status(500).json("Internal server error");
+  }
+});
 
 app.listen(app.get("puerto"), () => {
   console.log("Escuchando en el puerto ", app.get("puerto"));

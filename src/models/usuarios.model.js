@@ -25,10 +25,6 @@ const usuarioSchema = new Schema({
     contraseña: {
         type: String,
         required: true
-    },
-    administrador: {
-        type: Boolean,
-        default: false
     }
 });
 

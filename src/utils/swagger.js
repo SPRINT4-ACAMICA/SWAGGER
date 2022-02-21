@@ -791,10 +791,6 @@ export const swaggerOptions = {
               type: "string",
               example: "111111",
             },
-            administrador: {
-              type: "boolean",
-              example: false,
-            },
           },
         },
         UsuarioLogin: {
