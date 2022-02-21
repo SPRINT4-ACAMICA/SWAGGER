@@ -37,8 +37,8 @@ const Pedidos = async (req, res) => {
         let c = precios[index];
         prices.push(c);
         ordenes[index].push({ title: names[index], unit_price: prices[index], quantity: quantities[index] })
+        console.log(ordenes);
       }
-      console.log(ordenes);
     } else {
       console.log("No hay pedidos para mostrar");
     }
