@@ -16,8 +16,8 @@ const Pedidos = async (req, res) => {
     if (pedidos) {
       res.json(pedidos);
       const info = pedidos[pedidos.length - 1].pedidos;
-      //const nombres = info.nombres;
-      console.log(info);
+      const nombres = info[info.length-1].nombres;
+      console.log(nombres);
       /**const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
 
