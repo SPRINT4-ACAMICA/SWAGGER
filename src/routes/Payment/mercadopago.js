@@ -21,17 +21,15 @@ const Pedidos = async (req, res) => {
       const vector = await Producto.find({ nombre: { $in: nombres } });
       const prices = vector.map((price) => price.precio);
 
-      let precios = [];
       for (let index = 0; index < n; index++) {
-        let p = prices[index];
-        precios.push(p);
+        console.log(prices[index]);
       }
       console.log(precios);
     } else {
-      res.status(400).json({ msg: "No hay pedidos para mostrar" });
+      console.log("No hay pedidos para mostrar");
     }
   } catch (error) {
-    res.status(404).json(error);
+    console.log(error);
   }
 };
 
