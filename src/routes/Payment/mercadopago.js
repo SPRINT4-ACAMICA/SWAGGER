@@ -24,7 +24,7 @@ const Pedidos = async (req, res) => {
       for (let index = 0; index < n; index++) {
         console.log(prices[index]);
       }
-      console.log(precios);
+      
     } else {
       console.log("No hay pedidos para mostrar");
     }
