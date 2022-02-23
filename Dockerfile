@@ -11,4 +11,4 @@ RUN npm i -g pm2@latest
 
 COPY . .
 
-CMD ["pm2","start","src/index.js","--env","--watch"]
+CMD ["pm2","start","src/index.js","--name","api","--watch"]
