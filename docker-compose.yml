@@ -1,9 +1,9 @@
-version: "3"
+version: "3" 
 services:
   app:
     image: nodeimage
-    container_name: Node
-    restart: always
+    container_name: nodeserver
+    restart: always 
     build: ./
     ports:
       - "3000:3000"
