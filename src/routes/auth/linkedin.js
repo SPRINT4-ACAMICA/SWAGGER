@@ -14,7 +14,7 @@ const strategy_name = "linkedin";
 router.get(
   `/${strategy_name}/auth`,
   passport.authenticate(strategy_name, {
-    session: false,
+    session: true,
     scope: ["r_liteprofile", "r_emailaddress"],
   })
 );
