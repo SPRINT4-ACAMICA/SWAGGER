@@ -24,7 +24,7 @@ router.get(
   }),
   function (req, res) {
     //console.log(`Peticion get /${strategy_name}/callback `);
-    const data = req.user._json;
+    const data = req.user;
     console.log(data);
     /**console.log(
       `Nombre de usuario: ${username.givenName} ${username.familyName}`
