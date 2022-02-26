@@ -70,10 +70,8 @@ router.post("/pago", async function (req, res) {
 
   let items = [];
 
-  let vector = await Pedidos.then(data => {
-    console.log(data);
-  });
-  //console.log(vector);
+  let vector = await Pedidos.ordenes;
+  console.log(vector);
 
   for (let index = 0; index < vector.length; index++) {
     items[index] = Pedidos.ordenes[index]
