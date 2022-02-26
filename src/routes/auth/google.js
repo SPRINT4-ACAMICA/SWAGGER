@@ -13,7 +13,7 @@ const strategy_name = "google";
 
 router.get(
   `/${strategy_name}/auth`,
-  passport.authenticate(strategy_name, { session: true, scope: ["email"] })
+  passport.authenticate(strategy_name, { session: false, scope: ['profile', 'email'] })
 );
 
 router.get(
@@ -25,7 +25,7 @@ router.get(
   function (req, res) {
     console.log(`Peticion get /${strategy_name}/callback `);
     //const username = req.user.displayName;
-    const data = req.user;
+    const data = req.user._json;
     //const correo = data.email;
     console.log(data);
     //(username == undefined) ? console.log(`usuario: ${correo}`) : console.log(`Nombre de usuario: ${username}`);

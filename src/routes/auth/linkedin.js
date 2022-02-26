@@ -1,9 +1,5 @@
 import { Router } from "express";
 import passport from "passport";
-import jwt from 'jsonwebtoken';
-import Usuario from "../../models/usuarios.model.js";
-import config from "../../config.js";
-
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,7 +10,7 @@ const strategy_name = "linkedin";
 router.get(
   `/${strategy_name}/auth`,
   passport.authenticate(strategy_name, {
-    session: true,
+    session: false,
     scope: ["r_liteprofile", "r_emailaddress"],
   })
 );

@@ -13,7 +13,7 @@ const strategy_name = "facebook";
 
 router.get(
   `/${strategy_name}/auth`,
-  passport.authenticate(strategy_name, { session: true, scope: ["email"] })
+  passport.authenticate(strategy_name, { session: false, scope: ["email"] })
 );
 
 router.get(
