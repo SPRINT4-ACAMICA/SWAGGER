@@ -31,8 +31,8 @@ router.get(
     //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
 
-    const url_front = process.env.URL_FRONT;
-    res.redirect(301, url_front);
+    const url = process.env.URL_BACK;
+    res.redirect(301, `${url}/api`);
   }
 );
 
