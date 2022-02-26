@@ -1,22 +1,33 @@
 import { Router } from "express";
-const router = Router();
-import inicioSesionCorrecto from "../../middlewares/login.js";
-import { InicioSesion } from "../../controllers/usuarios.controller.js";
 import google from "./google.js";
 import facebook from "./facebook.js";
 import linkedin from "./linkedin.js";
 import github from "./github.js";
 
-router.post("/Login", inicioSesionCorrecto, InicioSesion);
+const router = Router();
 
-router.get("/failed", (req, res) => res.send("Hay un error en el login"));
+router.post("/sign-up", function (req, res) {
+  console.log("New request POST to /sign-up");
+
+  console.log(req.body);
+
+  const token = "hfdasjfefee23423fewfrw24234";
+
+  let data = {
+    success: true,
+    message: `User ${req.body.email} registered correctly`,
+    token: token,
+    data: req.body,
+  };
+
+  res.json(data);
+});
+
+router.get("/failed", (req, res) => res.send(" app failed"));
 
 router.use("", google);
-
 router.use("", facebook);
-
 router.use("", linkedin);
-
 router.use("", github);
 
 export default router;
