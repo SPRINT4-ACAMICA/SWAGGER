@@ -35,6 +35,6 @@ export const Pedidos = async (req, res) => {
     return ordenes;
     //console.log(ordenes);
   } else {
-    console.log("No hay pedidos para mostrar");
+    res.status(404).send({ msg: "No Data" });
   }
 };
