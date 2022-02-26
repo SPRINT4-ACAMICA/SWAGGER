@@ -54,7 +54,7 @@ configure({
 
 router.get("/orders", Pedidos);
 
-router.post("/pago", function (req, res) {
+router.post("/pago", async function (req, res) {
   console.log("New request POST to /pago");
   // TODO: protect this route with a middleware
 
@@ -70,8 +70,8 @@ router.post("/pago", function (req, res) {
 
   let items = [];
 
-  //let vector = Pedidos.;
-  console.log(Pedidos);
+  let vector = await Pedidos.ordenes;
+  console.log(vector);
 
   for (let index = 0; index < vector.length; index++) {
     items[index] = Pedidos.ordenes[index]
