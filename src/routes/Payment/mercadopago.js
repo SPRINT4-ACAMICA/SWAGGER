@@ -1,6 +1,6 @@
 //import Pedido from "../../models/pedidos.model.js";
 //import Producto from "../../models/productos.model.js";
-import Pedidos from "./datos.js";
+import { Pedidos } from "./datos.js";
 import { Router } from "express";
 const router = Router();
 
