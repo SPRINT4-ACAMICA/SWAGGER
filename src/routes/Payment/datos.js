@@ -6,7 +6,7 @@ let quantities = [];
 let prices = [];
 let ordenes = [];
 
-export const Pedidos = async (req, res) => {
+export async function Pedidos(req, res) {
   const pedidos = await Pedido.find();
   if (pedidos) {
     res.json(pedidos);
@@ -37,4 +37,4 @@ export const Pedidos = async (req, res) => {
   } else {
     res.status(404).send({ msg: "No Data" });
   }
-};
+}
