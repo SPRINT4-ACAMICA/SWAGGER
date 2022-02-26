@@ -1,6 +1,6 @@
 //import Pedido from "../../models/pedidos.model.js";
 //import Producto from "../../models/productos.model.js";
-import { Pedidos } from "./datos.js";
+import Pedidos from "./datos.js";
 import { Router } from "express";
 const router = Router();
 
@@ -70,7 +70,8 @@ router.post("/pago", function (req, res) {
 
   let items = [];
 
-  let vector = Pedidos.names;
+  let vector = Pedidos.ordenes;
+  console.log(vector);
 
   for (let index = 0; index < vector.length; index++) {
     items[index] = Pedidos.ordenes[index]
