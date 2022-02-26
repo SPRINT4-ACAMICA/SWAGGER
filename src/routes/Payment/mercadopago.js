@@ -1,6 +1,6 @@
-import Pedido from "../../models/pedidos.model.js";
-import Producto from "../../models/productos.model.js";
-
+//import Pedido from "../../models/pedidos.model.js";
+//import Producto from "../../models/productos.model.js";
+import { Pedidos } from "./datos.js";
 import { Router } from "express";
 const router = Router();
 
@@ -10,7 +10,7 @@ const { configure, preferences } = pkg;
 import dotenv from "dotenv";
 dotenv.config();
 
-let names = [];
+/**let names = [];
 let quantities = [];
 let prices = [];
 let ordenes = [];
@@ -45,7 +45,7 @@ const Pedidos = async (req, res) => {
   } catch (error) {
     console.log(error);
   }
-};
+};**/
 
 // Agrega credenciales
 configure({
@@ -71,7 +71,7 @@ router.post("/pago", function (req, res) {
   let items = [];
 
   for (let index = 0; index < names.length; index++) {
-    items[index] = ordenes[index]
+    items[index] = Pedidos.ordenes[index]
   }
   console.log(items);
 

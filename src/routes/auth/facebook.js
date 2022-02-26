@@ -1,9 +1,5 @@
 import { Router } from "express";
 import passport from "passport";
-import jwt from 'jsonwebtoken';
-import Usuario from "../../models/usuarios.model.js";
-import config from "../../config.js";
-
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -36,5 +32,11 @@ router.get(
     res.redirect(301, `${url}/api`);
   }
 );
+
+router.post('/logout', function(req, res){
+  req.logout();
+  const urlFront = process.env.URL_FRONT;
+  res.redirect(urlFront);
+});
 
 export default router;

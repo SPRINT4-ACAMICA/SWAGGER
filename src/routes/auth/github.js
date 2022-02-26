@@ -31,4 +31,10 @@ router.get(
   }
 );
 
+router.post('/logout', function(req, res){
+  req.logout();
+  const urlFront = process.env.URL_FRONT;
+  res.redirect(urlFront);
+});
+
 export default router;
