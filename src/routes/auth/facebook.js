@@ -64,7 +64,7 @@ router.get(
   }
 );
 
-router.get("/token", function (req, res) {
+/**router.get("/token", function (req, res) {
   const usuario = await Usuario.findOne({ correo: data.email });
   if (!usuario) {
     const usuario = new Usuario({
@@ -79,7 +79,7 @@ router.get("/token", function (req, res) {
     expiresIn: 60 * 60 * 24,
   });
   res.status(200).json({ auth: true, code });
-});
+});**/
 
 router.post("/logout", function (req, res) {
   req.logout();
