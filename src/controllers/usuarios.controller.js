@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
-import config from '../config.js';
+//import jwt from 'jsonwebtoken';
+//import bcrypt from 'bcryptjs';
+//import config from '../config.js';
 import Usuario from '../models/usuarios.model.js';
 
 export const Usuarios = async (req, res) => {
@@ -10,7 +10,7 @@ export const Usuarios = async (req, res) => {
     } catch (error) { res.status(404).json(error); }  
 };
 
-export const CrearUsuario = async (req, res) => {
+/**export const CrearUsuario = async (req, res) => {
     try {
         const { nombre, apellido, correo, telefono, direccion, contraseña, administrador } = req.body;
         if (nombre && apellido && correo && telefono && direccion && contraseña) {
@@ -64,7 +64,7 @@ export const InicioSesion = async (req, res) => {
         }
         else { res.status(400).json({msg: 'Faltan datos'}); }
     } catch (error) { res.status(404).json(error); }  
-};
+};**/
 
 export const EliminarUsuarios = async (req, res) => {
     try {
