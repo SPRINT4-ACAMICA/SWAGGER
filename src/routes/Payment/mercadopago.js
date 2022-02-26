@@ -70,8 +70,8 @@ router.post("/pago", function (req, res) {
 
   let items = [];
 
-  let vector = Pedidos.ordenes;
-  console.log(vector);
+  //let vector = Pedidos.;
+  console.log(Pedidos);
 
   for (let index = 0; index < vector.length; index++) {
     items[index] = Pedidos.ordenes[index]
