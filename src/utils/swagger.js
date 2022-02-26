@@ -28,6 +28,22 @@ export const swaggerOptions = {
         name: "mercadoPago",
         description: "Todos los pedidos de los usuarios",
       },
+      {
+        name: "facebook",
+        description: "Todos los pedidos de los usuarios",
+      },
+      {
+        name: "github",
+        description: "Todos los pedidos de los usuarios",
+      },
+      {
+        name: "google",
+        description: "Todos los pedidos de los usuarios",
+      },
+      {
+        name: "linkedin",
+        description: "Todos los pedidos de los usuarios",
+      },
     ],
     paths: {
       "/usuarios": {
@@ -738,6 +754,234 @@ export const swaggerOptions = {
             },
             401: {
               description: "Unauthorized",
+            },
+          },
+        },
+      },
+    },
+    "/facebook/token": {
+      get: {
+        tags: ["facebook"],
+        summary: "Para que los usuarios inicien sesión",
+        description: "Iniciar sesión",
+        responses: {
+          200: {
+            description: "Ok",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    msg: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          401: {
+            description: "Unauthorized",
+          },
+          400: {
+            description: "Bad Request",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          404: {
+            description: "Not Found",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/github/token": {
+      get: {
+        tags: ["github"],
+        summary: "Para que los usuarios inicien sesión",
+        description: "Iniciar sesión",
+        responses: {
+          200: {
+            description: "Ok",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    msg: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          401: {
+            description: "Unauthorized",
+          },
+          400: {
+            description: "Bad Request",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          404: {
+            description: "Not Found",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/google/token": {
+      get: {
+        tags: ["google"],
+        summary: "Para que los usuarios inicien sesión",
+        description: "Iniciar sesión",
+        responses: {
+          200: {
+            description: "Ok",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    msg: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          401: {
+            description: "Unauthorized",
+          },
+          400: {
+            description: "Bad Request",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          404: {
+            description: "Not Found",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "/linkedin/token": {
+      get: {
+        tags: ["linkedin"],
+        summary: "Para que los usuarios inicien sesión",
+        description: "Iniciar sesión",
+        responses: {
+          200: {
+            description: "Ok",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    msg: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          401: {
+            description: "Unauthorized",
+          },
+          400: {
+            description: "Bad Request",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
+            },
+          },
+          404: {
+            description: "Not Found",
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  properties: {
+                    err: {
+                      type: "string",
+                    },
+                  },
+                },
+              },
             },
           },
         },
