@@ -1,3 +1,5 @@
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 import { Router } from "express";
 import passport from "passport";
 
@@ -12,7 +14,7 @@ const strategy_name = "facebook";
 
 let data;
 
-const InicioSesion = async (req, res) => {
+/**const InicioSesion = async (req, res) => {
   try {
     const { correo, contraseña } = req.body;
     if (correo && contraseña) {
@@ -24,7 +26,7 @@ const InicioSesion = async (req, res) => {
       if (!usuario && !contraseña) {
         return res.status(401).send({ auth: false, token: null });
       } else {
-        const token = jwt.sign({ id: usuario._id }, config.secret, {
+        const token = jwt.sign({ id: usuario._id }, process.env.SECRET, {
           expiresIn: 60 * 60 * 24,
         });
         res.status(200).json({ auth: true, token });
@@ -35,7 +37,7 @@ const InicioSesion = async (req, res) => {
   } catch (error) {
     res.status(404).json(error);
   }
-};
+};**/
 
 router.get(
   `/${strategy_name}/auth`,
