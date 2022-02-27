@@ -19,7 +19,7 @@ router.post("/sign-up", function (req, res) {
   console.log(req.body);
 
   const usuario = await Usuario.findOne({ correo: req.body.email });
-  const contraseña = bcrypt.compare(req.body.contraseña, usuario.contraseña);
+  const contraseña = bcrypt.compare(req.body.password, usuario.contraseña);
   if (!usuario && !contraseña) {
     const user = new Usuario({
       correo,

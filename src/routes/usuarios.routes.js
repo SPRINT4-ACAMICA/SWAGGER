@@ -10,7 +10,7 @@ const router = Router();
 
 router.post('/Registro', Usuarios.crearUsuario);
 
-router.post('/Login', Usuarios.inicioSesion );
+//router.post('/Login', Usuarios.inicioSesion );
 
 router.delete('/Eliminar/:id', Usuarios.eliminarUsuarios);
 
