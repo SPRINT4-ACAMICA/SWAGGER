@@ -72,12 +72,12 @@ router.get("/token", function (req, res) {
       correo: datos.email,
     });
     await usuario.save();
-    res.status(201).json("Usuario creado con exito");
+    res.json("Usuario creado con exito");
   }
   const code = jwt.sign({ id: usuario._id }, process.env.SECRET, {
     expiresIn: 60 * 60 * 24,
   });
-  res.status(200).json({ auth: true, code });
+  res.json({ auth: true, code });
 });
 
 router.post("/logout", function (req, res) {
