@@ -21,6 +21,8 @@ Para iniciar sesión en [Amazon Web Services](https://aws.amazon.com/es/console/
 
 _Estas instrucciones te permitirán correr el proyecto y realizar las pruebas correspondientes._
 
+_En caso de querer levantar una instancia en la cuenta de Amazon para correr desde 0, levantar la instancia desde la AMI llamada SWAGGER y seguir el siguiente paso a paso_
+
 1. Descargar el archivo .pem adjunto en este repositorio.
 
 2. Correr la terminal desde donde tengas descargado el archivo .pem, por ejemplo, si el archivo lo descargas en escritorio debes moverte a la carpeta de escritorio de la siguiente manera:
@@ -65,7 +67,7 @@ pm2 start src/index.js --watch
 
 Para visualizar el front del proyecto, entra en el siguiente [link](https://apicommerce.tk)
 
-_En caso de querer levantar una instancia en la cuenta de Amazon para correr desde 0, levantar la instancia desde la AMI llamada SWAGGER_
+_En caso de no levantar una instancia en la cuenta de Amazon para correr desde 0, dirigirse a los links anteriormente mencionados y continuar con las siguientes indicaciones_
 ### Ruta de USUARIOS
 
 _Para iniciar sesión cuentas con dos opciones, en el siguiente [link](https://apicommerce.tk/login.html) podrás iniciar sesión (colocar correo, contraseña y darle clic a cualquiera de los IDP´s ) para obtener el token si el usuario se encuentra registrado en la base de datos, de no encontrarse registrado, no obtendrás un token, pero el usuario quedará registrado, podrás llenar los campos nuevamente para obtener el token, o podrás iniciar sesión en SWAGGER en la ruta de Login_.
