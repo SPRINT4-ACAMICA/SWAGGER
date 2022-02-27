@@ -26,9 +26,9 @@ router.get(
     const data = req.user._json;
     console.log(data);
 
-    const code  = await tokenIDP(data.email, first_name, last_name)
+    const token  = await tokenIDP(data.email, data.first_name, data.last_name)
   
-    console.log(code);
+    console.log(token);
 
     //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
