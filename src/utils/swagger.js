@@ -14,7 +14,7 @@ export const swaggerOptions = {
     tags: [
       {
         name: "Login",
-        description: "Todos los usuarios del sistema y Login",
+        description: "Todos los usuarios del sistema",
       },
       {
         name: "Productos",
@@ -26,14 +26,14 @@ export const swaggerOptions = {
       },
       {
         name: "mercadoPago",
-        description: "Para que los usuarios vean los pedidos",
+        description: "Para que los usuarios vean todos los pedidos",
       },
     ],
     paths: {
       "/usuarios": {
         get: {
-          tags: ["Usuarios"],
-          summary: "Consultar todos los usuarios",
+          tags: ["Login"],
+          summary: "Ver todos los usuarios",
           responses: {
             200: {
               description: "Ok",
@@ -66,8 +66,7 @@ export const swaggerOptions = {
       "/Login": {
         post: {
           tags: ["Login"],
-          summary: "Para que los usuarios inicien sesión y obtengan el token",
-          description: "Iniciar sesión",
+          summary: "Para que los usuarios inicien sesión",
           requestBody: {
             content: {
               "application/json": {
@@ -219,7 +218,6 @@ export const swaggerOptions = {
         post: {
           tags: ["Productos"],
           summary: "Para crear productos",
-          description: "Crear nuevos productos",
           requestBody: {
             content: {
               "application/json": {
@@ -284,8 +282,7 @@ export const swaggerOptions = {
       "/productos/{id}": {
         put: {
           tags: ["Productos"],
-          summary:
-            "Para editar productos",
+          summary: "Para editar productos",
           parameters: [
             {
               in: "path",
@@ -425,7 +422,7 @@ export const swaggerOptions = {
       "/pedidos/Ordenar/{id}": {
         post: {
           tags: ["Pedidos"],
-          summary: "Para que los usuarios terminen de crear sus pedidos en el sistema",
+          summary: "Para que los usuarios terminen de crear sus pedidos",
           parameters: [
             {
               in: "path",
@@ -498,7 +495,7 @@ export const swaggerOptions = {
       "/pedidos/Editar/{id}": {
         put: {
           tags: ["Pedidos"],
-          summary: "Para que los usuarios editen sus pedidos",
+          summary: "Para que los usuarios editen pedidos",
           parameters: [
             {
               in: "path",
@@ -606,7 +603,7 @@ export const swaggerOptions = {
       "/mercadopago/orders": {
         get: {
           tags: ["mercadoPago"],
-          summary: "Para ver todos los pedidos realizados y poder pagarlos",
+          summary: "Para ver todos los pedidos realizados",
           responses: {
             200: {
               description: "Ok",
@@ -642,7 +639,7 @@ export const swaggerOptions = {
     },
     security: [
       {
-        bearerAuth: []
+        bearerAuth: [],
       },
     ],
     components: {
@@ -650,8 +647,7 @@ export const swaggerOptions = {
         bearerAuth: {
           type: "http",
           scheme: "bearer",
-          bearerFormat: "JWT"
-        }
+        },
       },
       schemas: {
         Usuario: {
@@ -685,7 +681,7 @@ export const swaggerOptions = {
           properties: {
             correo: {
               type: "string",
-              example: "j@gmail.com",
+              example: "j.j@gmail.com",
             },
             contraseña: {
               type: "string",
@@ -726,5 +722,5 @@ export const swaggerOptions = {
       },
     },
   },
-  apis: ['./src/routes*.js'],
+  apis: ["./src/routes*.js"],
 };
