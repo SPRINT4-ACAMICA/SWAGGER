@@ -25,8 +25,6 @@ router.post('/sign-up', async function (req, res) {
     token: token,
     data: req.body,
   };
-
-  res.json(data);
 });
 
 router.get('/failed', (req, res) => res.send('Hay un error en el login'));
