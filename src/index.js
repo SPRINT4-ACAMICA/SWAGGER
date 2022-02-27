@@ -4,7 +4,7 @@ import passport from "passport";
 //import expressJwt from "express-jwt";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
-import usuariosRoutes from "./routes/usuarios.routes.js";
+//import usuariosRoutes from "./routes/usuarios.routes.js";
 import productosRoutes from "./routes/productos.routes.js";
 import ordenesRoutes from "./routes/pedidos.routes.js";
 import public_routes from "./routes/public.js";
