@@ -3,7 +3,10 @@ import { Precio } from "../controllers/precio.controller.js";
 import Usuario from "../models/usuarios.model.js";
 
 import jwt from "jsonwebtoken";
-import config from "../config.js";
+//import config from "../config.js";
+
+import dotenv from "dotenv";
+dotenv.config();
 
 /**export const Pedidos = async (req, res) => {
   try {
@@ -27,7 +30,7 @@ export const CrearOrden = async (req, res) => {
       const token = bearer[1];
 
       //Decodificar el token
-      const decoded = await jwt.verify(token, config.secret);
+      const decoded = await jwt.verify(token, process.env.SECRET);
       const id = decoded.id;
       const user = await Usuario.findById(id);
 
