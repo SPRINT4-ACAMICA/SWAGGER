@@ -158,7 +158,7 @@ export const swaggerOptions = {
       },
       "/Eliminar/{id}": {
         delete: {
-          tags: ["Usuarios"],
+          tags: ["Login"],
           summary: "Para que los administradores eliminen usuarios del sistema",
           description: "Para eliminar alguno de los usuarios existentes",
           parameters: [
