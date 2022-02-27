@@ -1,8 +1,8 @@
-import { validateAsync } from "../schemas/login.schema.js";
+import { sessionSchema } from "../schemas/login.schema.js";
 
 const datosLogin = async (req, res, next) => {
   try {
-    await validateAsync(req.body);
+    await sessionSchema(req.body);
     next();
   } catch (error) {
     console.error(error.details[0].message);
