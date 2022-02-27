@@ -90,7 +90,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/Login": {
+      /**"/Login": {
         post: {
           tags: ["Login"],
           summary: "Para que los usuarios inicien sesión",
@@ -155,7 +155,7 @@ export const swaggerOptions = {
             },
           },
         },
-      },
+      },**/
       "/Eliminar/{id}": {
         delete: {
           tags: ["Login"],

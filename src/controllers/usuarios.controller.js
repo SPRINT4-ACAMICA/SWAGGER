@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken';
+//import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-import config from '../config.js';
+//import config from '../config.js';
 import Usuario from '../models/usuarios.model.js';
 
 export const usuarios = async (req, res) => {
@@ -12,37 +12,19 @@ export const usuarios = async (req, res) => {
 
 export const crearUsuario = async (req, res) => {
     try {
-        const { nombre, apellido, correo, telefono, direccion, contraseña, administrador } = req.body;
-        if (nombre && apellido && correo && telefono && direccion && contraseña) {
-            const UsuarioRepetido = await Usuario.findOne({ correo });
-            if (UsuarioRepetido) {
+        const { correo, contraseña } = req.body;
+        if (correo && contraseña) {
+            const usuario = await Usuario.findOne({ correo });
+            if (usuario) {
                 res.status(400).json("El Correo ya existe en la base de datos");
             } else {
-                if (administrador != false) {
-                    const usuario = new Usuario({
-                        nombre,
-                        apellido,
-                        correo,
-                        telefono,
-                        direccion,
-                        contraseña: bcrypt.hashSync(contraseña, 10),
-                        administrador
-                    });
-                    await usuario.save();
-                    res.status(201).json("Usuario creado con exito");
-                } else {
-                    const usuario = new Usuario({
-                        nombre,
-                        apellido,
-                        correo,
-                        telefono,
-                        direccion,
-                        contraseña: bcrypt.hashSync(contraseña, 10)
-                    });  
-                    await usuario.save();
-                    res.status(201).json("Usuario creado con exito");
-                }
-            }
+                usuario = new Usuario({
+                    correo,
+                    contraseña: bcrypt.hashSync(contraseña, 10),
+                });
+                await usuario.save();
+                res.status(201).json("Usuario creado con exito");
+            } 
         } else { res.status(400).json("Faltan datos"); }
     } catch (error) { res.status(404).json(error); } 
 };
