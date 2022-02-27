@@ -1,9 +1,9 @@
-import passport from "passport";
-import { Strategy as GoogleStrategy } from "passport-google-oauth20";
-import dotenv from "dotenv";
+import passport from 'passport';
+import { Strategy as GoogleStrategy } from 'passport-google-oauth20';
+import dotenv from 'dotenv';
 dotenv.config();
 
-const strategy_name = "google";
+const strategy_name = 'google';
 
 passport.use(
   strategy_name,

@@ -1,7 +1,7 @@
-import Usuario from "../models/usuarios.model.js";
-import jwt from "jsonwebtoken";
-import bcrypt from "bcryptjs";
-import config from "../config.js";
+import Usuario from '../models/usuarios.model.js';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
+import config from '../config.js';
 
 export async function Token(email, password) {
     const usuario = await Usuario.findOne({ correo: email });

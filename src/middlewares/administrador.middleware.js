@@ -5,7 +5,7 @@ import config from '../config.js';
 export const Administrador = async (req, res, next) =>
 {
     const bearerHeader = req.headers['authorization'];
-    const bearer = bearerHeader.split(" ");
+    const bearer = bearerHeader.split(' ');
     const token = bearer[1];
     
     //Decodificar el token
@@ -18,6 +18,6 @@ export const Administrador = async (req, res, next) =>
     else { 
         return res
         .status(401)
-        .send({ auth: false, msg: "No eres administrador" }); 
+        .send({ auth: false, msg: 'No eres administrador' }); 
     }
 };

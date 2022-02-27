@@ -1,8 +1,5 @@
 import { Router } from 'express';
 import * as Usuarios from '../controllers/usuarios.controller.js';
-//import  datosLogin from "../middlewares/login.middleware.js";
-//import { Administrador } from '../middlewares/administrador.middleware.js';
-//import { Verificar } from '../middlewares/token.middleware.js';
 
 const router = Router();
 

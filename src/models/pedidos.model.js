@@ -6,10 +6,6 @@ const PedidoSchema = new Schema({
         type: String,
         required:true
     },
-    direccion: {
-        type: String,
-        required:true
-    },
     pedidos: [{
         nombres: {
             type: Array,

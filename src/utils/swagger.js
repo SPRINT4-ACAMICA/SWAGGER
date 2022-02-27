@@ -1,59 +1,59 @@
 export const swaggerOptions = {
   definition: {
-    openapi: "3.0.0",
+    openapi: '3.0.0',
     info: {
-      title: "TERCER SPRINT",
-      version: "1.0.0",
+      title: 'TERCER SPRINT',
+      version: '1.0.0',
     },
     servers: [
       {
-        url: "https://api.apicommerce.tk",
-        description: "Servidor local",
+        url: 'https://api.apicommerce.tk',
+        description: 'Servidor local',
       },
     ],
     tags: [
       {
-        name: "Usuarios",
-        description: "Todos los usuarios del sistema",
+        name: 'Usuarios',
+        description: 'Todos los usuarios del sistema',
       },
       {
-        name: "Login",
-        description: "Todos los usuarios del sistema",
+        name: 'Login',
+        description: 'Todos los usuarios del sistema',
       },
       {
-        name: "Productos",
-        description: "Todos los productos del sistema",
+        name: 'Productos',
+        description: 'Todos los productos del sistema',
       },
       {
-        name: "Pedidos",
-        description: "Para que los usuarios creen pedidos",
+        name: 'Pedidos',
+        description: 'Para que los usuarios creen pedidos',
       },
     ],
     paths: {
-      "/usuarios": {
+      '/usuarios': {
         get: {
-          tags: ["Usuarios"],
-          summary: "Ver todos los usuarios registrados en el sistema",
+          tags: ['Usuarios'],
+          summary: 'Ver todos los usuarios registrados en el sistema',
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    $ref: "#/components/schemas/Producto",
+                    $ref: '#/components/schemas/Producto',
                   },
                 },
               },
             },
             404: {
-              description: "No Content",
+              description: 'No Content',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -63,31 +63,31 @@ export const swaggerOptions = {
           },
         },
       },
-      "/Registro": {
+      '/Registro': {
         post: {
-          tags: ["Login"],
-          summary: "Para crear nuevos usuarios en el sistema",
-          description: "Crear usuarios",
+          tags: ['Login'],
+          summary: 'Para crear nuevos usuarios en el sistema',
+          description: 'Crear usuarios',
           security: [],
           requestBody: {
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  $ref: "#/components/schemas/Usuario",
+                  $ref: '#/components/schemas/Usuario',
                 },
               },
             },
           },
           responses: {
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -95,14 +95,14 @@ export const swaggerOptions = {
               },
             },
             201: {
-              description: "Created",
+              description: 'Created',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -110,14 +110,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -127,30 +127,30 @@ export const swaggerOptions = {
           },
         },
       },
-      "/Login": {
+      '/Login': {
         post: {
-          tags: ["Login"],
-          summary: "Para que los usuarios inicien sesión",
-          description: "Iniciar sesión",
+          tags: ['Login'],
+          summary: 'Para que los usuarios inicien sesión',
+          description: 'Iniciar sesión',
           requestBody: {
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  $ref: "#/components/schemas/UsuarioLogin",
+                  $ref: '#/components/schemas/UsuarioLogin',
                 },
               },
             },
           },
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -158,17 +158,17 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -176,14 +176,14 @@ export const swaggerOptions = {
               },
             },
             404: {
-              description: "Not Found",
+              description: 'Not Found',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -193,33 +193,33 @@ export const swaggerOptions = {
           },
         },
       },
-      "/Eliminar/{id}": {
+      '/Eliminar/{id}': {
         delete: {
-          tags: ["Login"],
-          summary: "Para que los administradores eliminen usuarios del sistema",
-          description: "Para eliminar alguno de los usuarios existentes",
+          tags: ['Login'],
+          summary: 'Para que los administradores eliminen usuarios del sistema',
+          description: 'Para eliminar alguno de los usuarios existentes',
           parameters: [
             {
-              in: "path",
-              name: "id",
-              description: "Identificador del usuario",
+              in: 'path',
+              name: 'id',
+              description: 'Identificador del usuario',
               required: true,
               schema: {
-                type: "string",
-                example: "600b365c79bdd616403fc73b",
+                type: 'string',
+                example: '600b365c79bdd616403fc73b',
               },
             },
           ],
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -227,14 +227,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -242,36 +242,36 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
       },
-      "/productos": {
+      '/productos': {
         get: {
-          tags: ["Productos"],
-          summary: "Ver todos los productos del sistema",
-          description: "Ver los productos registrados en el sistema",
+          tags: ['Productos'],
+          summary: 'Ver todos los productos del sistema',
+          description: 'Ver los productos registrados en el sistema',
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    $ref: "#/components/schemas/Producto",
+                    $ref: '#/components/schemas/Producto',
                   },
                 },
               },
             },
             404: {
-              description: "No Content",
+              description: 'No Content',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -281,30 +281,30 @@ export const swaggerOptions = {
           },
         },
       },
-      "/productos/nuevos": {
+      '/productos/nuevos': {
         post: {
-          tags: ["Productos"],
-          summary: "Para que los administradores creen productos en el sistema",
-          description: "Crear nuevos productos",
+          tags: ['Productos'],
+          summary: 'Para que los administradores creen productos en el sistema',
+          description: 'Crear nuevos productos',
           requestBody: {
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  $ref: "#/components/schemas/Producto",
+                  $ref: '#/components/schemas/Producto',
                 },
               },
             },
           },
           responses: {
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -312,14 +312,14 @@ export const swaggerOptions = {
               },
             },
             201: {
-              description: "Created",
+              description: 'Created',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -327,14 +327,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -342,47 +342,47 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
       },
-      "/productos/{id}": {
+      '/productos/{id}': {
         put: {
-          tags: ["Productos"],
+          tags: ['Productos'],
           summary:
-            "Para que los administradores editen productos en el sistema",
-          description: "Para editar propiedades de los productos existentes",
+            'Para que los administradores editen productos en el sistema',
+          description: 'Para editar propiedades de los productos existentes',
           parameters: [
             {
-              in: "path",
-              name: "id",
+              in: 'path',
+              name: 'id',
               required: true,
               schema: {
-                type: "string",
-                example: "600b365c79bdd616403fc73a",
+                type: 'string',
+                example: '600b365c79bdd616403fc73a',
               },
             },
           ],
           requestBody: {
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  $ref: "#/components/schemas/Producto",
+                  $ref: '#/components/schemas/Producto',
                 },
               },
             },
           },
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -390,14 +390,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -405,39 +405,39 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
       },
-      "/productos/Eliminar/{id}": {
+      '/productos/Eliminar/{id}': {
         delete: {
-          tags: ["Productos"],
+          tags: ['Productos'],
           summary:
-            "Para que los administradores eliminen productos del sistema",
-          description: "Para eliminar alguno de los productos existentes",
+            'Para que los administradores eliminen productos del sistema',
+          description: 'Para eliminar alguno de los productos existentes',
           parameters: [
             {
-              in: "path",
-              name: "id",
-              description: "Identificador del producto",
+              in: 'path',
+              name: 'id',
+              description: 'Identificador del producto',
               required: true,
               schema: {
-                type: "string",
-                example: "600b365c79bdd616403fc73b",
+                type: 'string',
+                example: '600b365c79bdd616403fc73b',
               },
             },
           ],
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -445,14 +445,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -460,38 +460,38 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
       },
-      /**"/mercadopago/orders": {
+      /**'/mercadopago/orders': {
         get: {
-          tags: ["Pedidos"],
+          tags: ['Pedidos'],
           summary:
-            "Para que los administradores y usuarios vean todos los pedidos realizados",
+            'Para que los administradores y usuarios vean todos los pedidos realizados',
           description:
-            "Los administradores y usuarios podrán ver todos los pedidos registrados en el sistema",
+            'Los administradores y usuarios podrán ver todos los pedidos registrados en el sistema',
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    $ref: "#/components/schemas/Pedido",
+                    $ref: '#/components/schemas/Pedido',
                   },
                 },
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -499,26 +499,26 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
       },**/
-      "/pedidos/Crear": {
+      '/pedidos/Crear': {
         post: {
-          tags: ["Pedidos"],
-          summary: "Para empezar a llenar el esquema de pedidos",
-          description: "Para empezar a llenar datos",
+          tags: ['Pedidos'],
+          summary: 'Para empezar a llenar el esquema de pedidos',
+          description: 'Para empezar a llenar datos',
           responses: {
             201: {
-              description: "Created",
+              description: 'Created',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -526,47 +526,47 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
       },
-      "/pedidos/Ordenar/{id}": {
+      '/pedidos/Ordenar/{id}': {
         post: {
-          tags: ["Pedidos"],
+          tags: ['Pedidos'],
           summary:
-            "Para que los usuarios terminen de crear sus pedidos en el sistema",
-          description: "Para terminar de crear el pedido",
+            'Para que los usuarios terminen de crear sus pedidos en el sistema',
+          description: 'Para terminar de crear el pedido',
           parameters: [
             {
-              in: "path",
-              name: "id",
+              in: 'path',
+              name: 'id',
               required: true,
               schema: {
-                type: "string",
-                example: "600b365c79bdd616403fc73a",
+                type: 'string',
+                example: '600b365c79bdd616403fc73a',
               },
             },
           ],
           requestBody: {
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  $ref: "#/components/schemas/Pedido",
+                  $ref: '#/components/schemas/Pedido',
                 },
               },
             },
           },
           responses: {
             201: {
-              description: "Created",
+              description: 'Created',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -574,14 +574,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -589,14 +589,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -606,42 +606,42 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/Editar/{id}": {
+      '/pedidos/Editar/{id}': {
         put: {
-          tags: ["Pedidos"],
+          tags: ['Pedidos'],
           summary:
-            "Para que los usuarios editen pedidos mientras no los hayan confirmado",
-          description: "Para editar propiedades de los pedidos existentes",
+            'Para que los usuarios editen pedidos mientras no los hayan confirmado',
+          description: 'Para editar propiedades de los pedidos existentes',
           parameters: [
             {
-              in: "path",
-              name: "id",
+              in: 'path',
+              name: 'id',
               required: true,
               schema: {
-                type: "string",
-                example: "600b365c79bdd616403fc73a",
+                type: 'string',
+                example: '600b365c79bdd616403fc73a',
               },
             },
           ],
           requestBody: {
             content: {
-              "application/json": {
+              'application/json': {
                 schema: {
-                  $ref: "#/components/schemas/Pedido",
+                  $ref: '#/components/schemas/Pedido',
                 },
               },
             },
           },
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -649,14 +649,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -664,14 +664,14 @@ export const swaggerOptions = {
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -681,33 +681,33 @@ export const swaggerOptions = {
           },
         },
       },
-      "/pedidos/Eliminar/{id}": {
+      '/pedidos/Eliminar/{id}': {
         delete: {
-          tags: ["Pedidos"],
-          summary: "Para que los administradores eliminen pedidos del sistema",
-          description: "Para eliminar alguno de los pedidos existentes",
+          tags: ['Pedidos'],
+          summary: 'Para que los administradores eliminen pedidos del sistema',
+          description: 'Para eliminar alguno de los pedidos existentes',
           parameters: [
             {
-              in: "path",
-              name: "id",
-              description: "Identificador del producto",
+              in: 'path',
+              name: 'id',
+              description: 'Identificador del producto',
               required: true,
               schema: {
-                type: "string",
-                example: "600b365c79bdd616403fc73b",
+                type: 'string',
+                example: '600b365c79bdd616403fc73b',
               },
             },
           ],
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       msg: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -717,33 +717,33 @@ export const swaggerOptions = {
           },
         },
       },
-      "/mercadopago/orders": {
+      '/mercadopago/orders': {
         get: {
-          tags: ["mercadoPago"],
+          tags: ['mercadoPago'],
           summary:
-            "Para que los administradores y usuarios vean todos los pedidos realizados",
+            'Para que los administradores y usuarios vean todos los pedidos realizados',
           description:
-            "Los administradores y usuarios podrán ver todos los pedidos registrados en el sistema",
+            'Los administradores y usuarios podrán ver todos los pedidos registrados en el sistema',
           responses: {
             200: {
-              description: "Ok",
+              description: 'Ok',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    $ref: "#/components/schemas/Pedido",
+                    $ref: '#/components/schemas/Pedido',
                   },
                 },
               },
             },
             400: {
-              description: "Bad Request",
+              description: 'Bad Request',
               content: {
-                "application/json": {
+                'application/json': {
                   schema: {
-                    type: "object",
+                    type: 'object',
                     properties: {
                       err: {
-                        type: "string",
+                        type: 'string',
                       },
                     },
                   },
@@ -751,7 +751,7 @@ export const swaggerOptions = {
               },
             },
             401: {
-              description: "Unauthorized",
+              description: 'Unauthorized',
             },
           },
         },
@@ -765,75 +765,75 @@ export const swaggerOptions = {
     components: {
       securitySchemes: {
         bearerAuth: {
-          type: "http",
-          scheme: "bearer",
+          type: 'http',
+          scheme: 'bearer',
         },
       },
       schemas: {
         Usuario: {
-          type: "object",
+          type: 'object',
           required: [
-            "correo",
-            "contraseña",
+            'correo',
+            'contraseña',
           ],
           properties: {
             nombre: {
-              type: "string",
-              example: "Jaao",
+              type: 'string',
+              example: 'Jaao',
             },
             apellido: {
-              type: "string",
-              example: "A",
+              type: 'string',
+              example: 'A',
             },
             correo: {
-              type: "string",
-              example: "j@gmail.com",
+              type: 'string',
+              example: 'j@gmail.com',
             },
             contraseña: {
-              type: "string",
-              example: "111111",
+              type: 'string',
+              example: '111111',
             },
           },
         },
         UsuarioLogin: {
-          type: "object",
-          required: ["correo", "contraseña"],
+          type: 'object',
+          required: ['correo', 'contraseña'],
           properties: {
             correo: {
-              type: "string",
-              example: "j@gmail.com",
+              type: 'string',
+              example: 'j@gmail.com',
             },
             contraseña: {
-              type: "string",
-              example: "111111",
+              type: 'string',
+              example: '111111',
             },
           },
         },
         Producto: {
-          type: "object",
-          required: ["nombre", "precio"],
+          type: 'object',
+          required: ['nombre', 'precio'],
           properties: {
             nombre: {
-              type: "string",
-              example: "Cerveza",
+              type: 'string',
+              example: 'Cerveza',
             },
             precio: {
-              type: "number",
+              type: 'number',
               example: 4000,
             },
           },
         },
         Pedido: {
-          type: "object",
-          required: ["nombres", "cantidades"],
+          type: 'object',
+          required: ['nombres', 'cantidades'],
           properties: {
             nombres: {
-              type: "array",
+              type: 'array',
               items: {},
-              example: ["Hamburguesa", "Coca cola"],
+              example: ['Hamburguesa', 'Coca cola'],
             },
             cantidades: {
-              type: "array",
+              type: 'array',
               items: {},
               example: [3, 2],
             },
@@ -842,5 +842,5 @@ export const swaggerOptions = {
       },
     },
   },
-  apis: ["./src/routes*.js"],
+  apis: ['./src/routes*.js'],
 };

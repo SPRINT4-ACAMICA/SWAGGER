@@ -17,16 +17,16 @@ export const crearUsuario = async (req, res) => {
         if (correo && contraseña) {
             const usuario = await Usuario.findOne({ correo });
             if (usuario) {
-                res.status(400).json("El Correo ya existe en la base de datos");
+                res.status(400).json('El Correo ya existe en la base de datos');
             } else {
                 usuario = new Usuario({
                     correo,
                     contraseña: bcrypt.hashSync(contraseña, 10),
                 });
                 await usuario.save();
-                res.status(201).json("Usuario creado con exito");
+                res.status(201).json('Usuario creado con exito');
             } 
-        } else { res.status(400).json("Faltan datos"); }
+        } else { res.status(400).json('Faltan datos'); }
     } catch (error) { res.status(404).json(error); } 
 };
 
@@ -45,7 +45,7 @@ export const eliminarUsuarios = async (req, res) => {
         const { id } = req.params;
         if(id) {
             await Usuario.findByIdAndDelete(id);
-            res.status(200).json({msg: "El Usuario fue eliminado con exito"});
+            res.status(200).json({msg: 'El Usuario fue eliminado con exito'});
         } else { res.status(400).json({msg: 'Faltan datos'}); } 
     } catch (error) { res.status(404).json(error); } 
 };
