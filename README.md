@@ -68,8 +68,7 @@ Para visualizar el front del proyecto, entra en el siguiente [link](https://apic
 _En caso de querer levantar una instancia en la cuenta de Amazon para correr desde 0, levantar la instancia desde la AMI llamada SWAGGER_
 ### Ruta de USUARIOS
 
-_Para iniciar sesión cuentas con dos opciones, en el siguiente [link](https://apicommerce.tk/login.html) podrás iniciar sesión y obtener el token si el usuario se encuentra registrado en la base de datos, de no encontrarse registrado, no obtendrás un token, pero el usuario quedara registrado, podrás llenar los campos nuevamente para obtener el token, o podrás iniciar sesión en SWAGGER en la ruta de login_.
-
+_Para iniciar sesión cuentas con dos opciones, en el siguiente [link](https://apicommerce.tk/login.html) podrás iniciar sesión (colocar correo, contraseña y darle clic a cualquiera de los IDP´s ) para obtener el token si el usuario se encuentra registrado en la base de datos, de no encontrarse registrado, no obtendrás un token, pero el usuario quedará registrado, podrás llenar los campos nuevamente para obtener el token, o podrás iniciar sesión en SWAGGER en la ruta de Login_.
 
 _El token lo podrás encontrar en consola_.
 ### Ruta PEDIDOS
@@ -101,7 +100,7 @@ _Para encontrar los productos que están almacenados, debes dirigirte al "get" q
 
 * El vector "nombres" tiene que tener la misma longitud del vector "cantidades", es decir, cada producto escrito en el vector "nombres" debe tener su cantidad correspondiente.
 
-* IMPORTANTE: Para pagar los pedidos nuevos o viejos, es obligatorio ejecutar el endpoint de mercadopago/orders, una vez ejecutado, en el siguiente [link](https://apicommerce.tk/pago.html) se encontrará con el botón de mercadopago.
+* IMPORTANTE: Para pagar los pedidos es obligatorio ejecutar el endpoint de mercadopago/orders, una vez ejecutado, en el siguiente [link](https://apicommerce.tk/pago.html) se encontrará con el botón de mercadopago, el cuál esta programado para pagar el último pedido realizado.
 
 * IMPORTANTE: Para pagar los pedidos tienes que tener la cuenta de [mercado pago developers colombia](https://www.mercadolibre.com/jms/mco/lgz/login?platform_id=mp&go=https://www.mercadopago.com.co/developers/es/guides), con los siguientes datos...
 
