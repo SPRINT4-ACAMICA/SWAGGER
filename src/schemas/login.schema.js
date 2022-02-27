@@ -1,9 +1,11 @@
 import Joi from "joi";
 
 export const sessionSchema = Joi.object({
-  nombre: Joi.string().alphanum().min(3).max(30).required(),
+  correo: Joi.string()
+    .email({ tlds: { allow: false } })
+    .required(),
 
-  comtraseña: Joi.string()
+  contraseña: Joi.string()
     .pattern(new RegExp("^[a-zA-Z0-9]{3,30}$"))
     .required(),
 });
