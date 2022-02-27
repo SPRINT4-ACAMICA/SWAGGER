@@ -3,9 +3,9 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import config from "../config.js";
 
-export async function Token(correo, contraseña) {
-    const usuario = await Usuario.findOne({ correo });
-    const contraseña = bcrypt.compare(contraseña, usuario.contraseña);
+export async function Token(email, password) {
+    const usuario = await Usuario.findOne({ correo: email });
+    const contraseña = bcrypt.compare(password, usuario.contraseña);
     if (!usuario && !contraseña) {
         const usuario = new Usuario({
             correo,
