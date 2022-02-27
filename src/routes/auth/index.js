@@ -14,15 +14,15 @@ router.post('/sign-up', async function (req, res) {
 
   console.log(req.body);
 
-  const code  = await Token(req.body.email, req.body.password)
+  const token  = await Token(req.body.email, req.body.password)
   
-  console.log(code);
-  res.json({ auth: true, code });
+  console.log(token);
+  res.json({ auth: true, token });
 
   let data = {
     success: true,
     message: `User ${req.body.email} registered correctly`,
-    token: code,
+    token: token,
     data: req.body,
   };
 
