@@ -1,16 +1,16 @@
-/**import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import config from '../config.js';
 import Usuario from '../models/usuarios.model.js';
 
-export const Usuarios = async (req, res) => {
+export const usuarios = async (req, res) => {
     try {
         const usuarios = await Usuario.find();
         res.json(usuarios);
     } catch (error) { res.status(404).json(error); }  
 };
 
-export const CrearUsuario = async (req, res) => {
+export const crearUsuario = async (req, res) => {
     try {
         const { nombre, apellido, correo, telefono, direccion, contraseña, administrador } = req.body;
         if (nombre && apellido && correo && telefono && direccion && contraseña) {
@@ -47,7 +47,7 @@ export const CrearUsuario = async (req, res) => {
     } catch (error) { res.status(404).json(error); } 
 };
 
-export const InicioSesion = async (req, res) => {
+export const inicioSesion = async (req, res) => {
     try {
         const { correo, contraseña } = req.body;
         if (correo && contraseña) {
@@ -66,7 +66,7 @@ export const InicioSesion = async (req, res) => {
     } catch (error) { res.status(404).json(error); }  
 };
 
-export const EliminarUsuarios = async (req, res) => {
+export const eliminarUsuarios = async (req, res) => {
     try {
         const { id } = req.params;
         if(id) {
@@ -75,4 +75,3 @@ export const EliminarUsuarios = async (req, res) => {
         } else { res.status(400).json({msg: 'Faltan datos'}); } 
     } catch (error) { res.status(404).json(error); } 
 };
-**/

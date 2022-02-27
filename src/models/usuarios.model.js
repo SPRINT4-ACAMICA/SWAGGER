@@ -14,14 +14,6 @@ const usuarioSchema = new Schema({
         type: String,
         required: true
     },
-    telefono: {
-        type: String,
-        required: true
-    },
-    direccion: {
-        type: String,
-        required: true
-    },
     contraseña: {
         type: String,
         required: true

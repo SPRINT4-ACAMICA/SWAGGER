@@ -1,16 +1,17 @@
-/**import { Router } from 'express';
+import { Router } from 'express';
 import * as Usuarios from '../controllers/usuarios.controller.js';
-import { Administrador } from '../middlewares/administrador.middleware.js';
+import  datosLogin from "../../middlewares/login.middleware.js";
+//import { Administrador } from '../middlewares/administrador.middleware.js';
 //import { Verificar } from '../middlewares/token.middleware.js';
 
 const router = Router();
 
-router.get('/', Verificar, Usuarios.Usuarios);
+//router.get('/', Usuarios.usuarios);
 
-router.post('/Registro', Usuarios.CrearUsuario);
+router.post('/Registro', Usuarios.crearUsuario);
 
-router.post('/Login', Usuarios.InicioSesion);
+router.post('/Login', datosLogin, Usuarios.inicioSesion, );
 
-router.delete('/Eliminar/:id', Administrador, Usuarios.EliminarUsuarios);
+router.delete('/Eliminar/:id', Usuarios.eliminarUsuarios);
 
-export default router;**/
+export default router;

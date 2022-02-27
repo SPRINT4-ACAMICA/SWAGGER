@@ -13,7 +13,7 @@ export const swaggerOptions = {
     ],
     tags: [
       {
-        name: "Usuarios",
+        name: "Login",
         description: "Todos los usuarios del sistema",
       },
       {
@@ -46,28 +46,9 @@ export const swaggerOptions = {
       },
     ],
     paths: {
-      "/usuarios": {
-        get: {
-          tags: ["Usuarios"],
-          summary: "Todos los usuarios del sistema",
-          description: "Todos los usuarios registrados en el sistema",
-          responses: {
-            200: {
-              description: "Ok",
-              content: {
-                "application/json": {
-                  schema: {
-                    $ref: "#/components/schemas/Usuario",
-                  },
-                },
-              },
-            },
-          },
-        },
-      },
-      "/usuarios/Registro": {
+      "/Registro": {
         post: {
-          tags: ["Usuarios"],
+          tags: ["Login"],
           summary: "Para crear nuevos usuarios en el sistema",
           description: "Crear usuarios",
           security: [],
@@ -129,9 +110,9 @@ export const swaggerOptions = {
           },
         },
       },
-      "/usuarios/Login": {
+      "/Login": {
         post: {
-          tags: ["Usuarios"],
+          tags: ["Login"],
           summary: "Para que los usuarios inicien sesión",
           description: "Iniciar sesión",
           requestBody: {
@@ -195,7 +176,7 @@ export const swaggerOptions = {
           },
         },
       },
-      "/usuarios/Eliminar/{id}": {
+      "/Eliminar/{id}": {
         delete: {
           tags: ["Usuarios"],
           summary: "Para que los administradores eliminen usuarios del sistema",

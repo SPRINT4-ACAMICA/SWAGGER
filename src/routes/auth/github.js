@@ -9,7 +9,10 @@ const strategy_name = "github";
 
 router.get(
   `/${strategy_name}/auth`,
-  passport.authenticate(strategy_name, { session: false, scope: ['user:email', 'read:user'] })
+  passport.authenticate(strategy_name, {
+    session: false,
+    scope: ["user:email", "read:user"],
+  })
 );
 
 router.get(
@@ -20,10 +23,10 @@ router.get(
   }),
   function (req, res) {
     console.log(`Peticion get /${strategy_name}/callback `);
-    const username = req.user.displayName;
-    const correo = req.user.email;
-    (username == undefined) ? console.log(`usuario: ${correo}`) : console.log(`Nombre de usuario: ${username}`);
-    //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
+    const data = req.user._json;
+    console.log(data);
+    
+    const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
 
     const url = process.env.URL_BACK;
@@ -31,7 +34,7 @@ router.get(
   }
 );
 
-router.post('/logout', function(req, res){
+router.post("/logout", function (req, res) {
   req.logout();
   const urlFront = process.env.URL_FRONT;
   res.redirect(urlFront);

@@ -20,12 +20,11 @@ router.get(
   }),
   function (req, res) {
     console.log(`Peticion get /${strategy_name}/callback `);
-    //const username = req.user.displayName;
-    const data = req.user;
-    //const correo = data.email;
+    const data = req.user._json;
     console.log(data);
-    //(username == undefined) ? console.log(`usuario: ${correo}`) : console.log(`Nombre de usuario: ${username}`);
-    //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
+
+    //console.log(token);
+    const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
 
     const url = process.env.URL_BACK;

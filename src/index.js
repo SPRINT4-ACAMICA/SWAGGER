@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import passport from "passport";
-//import expressJwt from "express-jwt";
+import expressJwt from "express-jwt";
 import swaggerUI from "swagger-ui-express";
 import swaggerJSDoc from "swagger-jsdoc";
-//import usuariosRoutes from "./routes/usuarios.routes.js";
+import usuariosRoutes from "./routes/usuarios.routes.js";
 import productosRoutes from "./routes/productos.routes.js";
 import ordenesRoutes from "./routes/pedidos.routes.js";
 import public_routes from "./routes/public.js";
@@ -32,24 +32,24 @@ app.use(auth_routes);
 
 app.use("/api", swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 
-/**app.use(
+app.use(
   expressJwt({
     secret: config.secret,
     algorithms: ["HS256"],
   }).unless({
     path: ["/Login", "/Registro"],
   })
-);**/
+);
 
-app.use("/usuarios", usuariosRoutes);
+app.use("/", usuariosRoutes);
 
-/**app.use((err, req, res, _next) => {
+app.use((err, req, res, _next) => {
   if (err.name === "UnauthorizedError") {
     res.status(401).json("Token invalido");
   } else {
     res.status(500).json("Internal server error");
   }
-});**/
+});
 
 app.use("/productos", productosRoutes);
 app.use("/pedidos", ordenesRoutes);

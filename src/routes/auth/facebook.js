@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken';
+//import jwt from 'jsonwebtoken';
 import { Router } from "express";
 import passport from "passport";
 
-import Usuario from "../../models/usuarios.model.js";
+//import Usuario from "../../models/usuarios.model.js";
 
 import dotenv from "dotenv";
 dotenv.config();
@@ -10,8 +10,6 @@ dotenv.config();
 const router = Router();
 
 const strategy_name = "facebook";
-
-let datos;
 
 /**const InicioSesion = async (req, res) => {
   try {
@@ -50,36 +48,17 @@ router.get(
     failureRedirect: "/failed",
   }),
   function (req, res) {
-    //console.log(`Peticion get /${strategy_name}/callback `);
-    datos = req.user;
-    console.log(datos);
+    console.log(`Peticion get /${strategy_name}/callback `);
+    const data = req.user._json;
+    console.log(data);
 
-    //console.log(token);
-    //const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
+    const token = "hgjsd8fs6g7s7df67g6sdf43sdg2s3df5sg6s7df7";
     //const url_front = process.env.URL_FRONT + `/?token=${token}`;
 
     const url = process.env.URL_BACK;
     res.redirect(301, `${url}/api`);
   }
 );
-
-router.get("/token", function (req, res) {
-  const usuario = await Usuario.findOne({ correo: datos.email });
-  if (!usuario) {
-    const usuario = new Usuario({
-      nombre: datos.first_name,
-      apellido: datos.last_name,
-      correo: datos.email,
-    });
-    await usuario.save();
-    res.status(201).json("Usuario creado con exito");
-  } else {
-    const code = jwt.sign({ id: usuario._id }, process.env.SECRET, {
-      expiresIn: 60 * 60 * 24,
-    });
-    res.status(200).json({ auth: true, code });
-  }
-});
 
 router.post("/logout", function (req, res) {
   req.logout();
