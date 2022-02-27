@@ -70,6 +70,8 @@ _En caso de querer levantar una instancia en la cuenta de Amazon para correr des
 
 _Para iniciar sesión cuentas con dos opciones, en el siguiente [link](https://apicommerce.tk/login.html) podrás iniciar sesión y obtener el token si el usuario se encuentra registrado en la base de datos, de no encontrarse registrado, no obtendrás un token, pero el usuario quedara registrado, podrás llenar los campos nuevamente para obtener el token, o podrás iniciar sesión en SWAGGER en la ruta de login_.
 
+
+_El token lo podrás encontrar en consola_.
 ### Ruta PEDIDOS
 
 _Para crear los pedidos, se trabajo con un concepto denominado nested documents, por lo cuál tendrás que haber ingresado el token en el campo de SWAGGER denominado "Authorize" y en la ruta Crear (Pedidos) darle ejecutar, no tienes que enviar un body, haciendo esto obtendrás algo como lo siguiente:_

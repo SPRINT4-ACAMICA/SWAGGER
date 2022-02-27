@@ -642,7 +642,7 @@ export const swaggerOptions = {
     },
     security: [
       {
-        bearerAuth: [],
+        "bearerAuth": [],
       },
     ],
     components: {
