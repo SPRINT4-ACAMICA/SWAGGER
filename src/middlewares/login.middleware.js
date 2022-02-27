@@ -1,6 +1,6 @@
 import { sessionSchema } from "../schemas/login.schema.js";
 
-const datosLogin = async (req, res, next) => {
+export const datosLogin = async (req, res, next) => {
   try {
     await sessionSchema.validateAsync(req.body);
     next();
@@ -9,5 +9,3 @@ const datosLogin = async (req, res, next) => {
     res.status(404).json(error);
   }
 };
-
-export default datosLogin;
