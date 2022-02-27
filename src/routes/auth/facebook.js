@@ -1,7 +1,7 @@
 //import jwt from 'jsonwebtoken';
 import { Router } from "express";
 import passport from "passport";
-import { tokenIDP } from '../../controllers/inicioSesion.controller.js'
+import { tokenIDP } from '../../controllers/inicioSesionWP.controller.js'
 
 import dotenv from "dotenv";
 dotenv.config();
