@@ -8,7 +8,7 @@ export async function Token(email, password) {
     //const contraseña = bcrypt.compare(password, usuario.contraseña);
     if (!usuario) {
         const usuario = new Usuario({
-            correo,
+            correo: email,
             contraseña: bcrypt.hashSync(password, 10),
         });
         await usuario.save();
