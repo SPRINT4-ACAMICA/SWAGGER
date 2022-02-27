@@ -2,7 +2,7 @@
 import bcrypt from 'bcryptjs';
 //import config from '../config.js';
 import Usuario from '../models/usuarios.model.js';
-import Token from './inicioSesion.controller.js';
+import { Token } from './inicioSesion.controller.js';
 
 export const usuarios = async (req, res) => {
     try {
