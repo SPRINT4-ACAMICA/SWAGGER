@@ -4,11 +4,11 @@ const { Schema, model } = pkg;
 const usuarioSchema = new Schema({
     nombre: {
         type: String,
-        required: true
+        //required: true
     },
     apellido: {
         type: String,
-        required: true
+        //required: true
     },
     correo: {
         type: String,
