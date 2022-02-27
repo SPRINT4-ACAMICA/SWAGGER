@@ -64,6 +64,8 @@ pm2 start src/index.js --watch
 6. Para visualizar el back del proyecto, entra en el siguiente [link](https://api.apicommerce.tk/api)
 
 Para visualizar el front del proyecto, entra en el siguiente [link](https://apicommerce.tk)
+
+_En caso de querer levantar una instancia en la cuenta de Amazon para correr desde 0, levantar la instancia desde la AMI llamada SWAGGER_
 ### Ruta de USUARIOS
 
 _Para iniciar sesión cuentas con dos opciones, en el siguiente [link](https://apicommerce.tk/login.html) podrás iniciar sesión y obtener el token si el usuario se encuentra registrado en la base de datos, de no encontrarse registrado, no obtendrás un token, pero el usuario quedara registrado, podrás llenar los campos nuevamente para obtener el token, o podrás iniciar sesión en SWAGGER en la ruta de login_.
