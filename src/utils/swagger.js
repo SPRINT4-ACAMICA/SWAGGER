@@ -14,7 +14,7 @@ export const swaggerOptions = {
     tags: [
       {
         name: "Login",
-        description: "Todos los usuarios del sistema - Login",
+        description: "Todos los usuarios del sistema y Login",
       },
       {
         name: "Productos",
@@ -642,7 +642,7 @@ export const swaggerOptions = {
     },
     security: [
       {
-        "bearerAuth": [],
+        bearerAuth: []
       },
     ],
     components: {
@@ -650,7 +650,8 @@ export const swaggerOptions = {
         bearerAuth: {
           type: "http",
           scheme: "bearer",
-        },
+          bearerFormat: "JWT"
+        }
       },
       schemas: {
         Usuario: {
@@ -725,5 +726,5 @@ export const swaggerOptions = {
       },
     },
   },
-  apis: ["./src/routes*.js"],
+  apis: ['./src/routes*.js'],
 };
