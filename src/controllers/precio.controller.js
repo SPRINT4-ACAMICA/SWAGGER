@@ -1,4 +1,4 @@
-import Producto from '../models/productos.model.js';
+import Producto from "../models/productos.model.js";
 
 export async function Precio(n, nombres, cantidades) {
     const vector = await Producto.find({nombre: {$in: nombres}});

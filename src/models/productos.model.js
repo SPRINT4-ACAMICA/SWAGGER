@@ -1,4 +1,4 @@
-import pkg from 'mongoose';
+import pkg from "mongoose";
 const { Schema, model } = pkg;
 
 const productoSchema = new Schema({
@@ -12,4 +12,4 @@ const productoSchema = new Schema({
     }
 });
 
-export default model('Producto', productoSchema);
+export default model("Producto", productoSchema);

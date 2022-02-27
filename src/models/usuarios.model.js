@@ -1,4 +1,4 @@
-import pkg from 'mongoose';
+import pkg from "mongoose";
 const { Schema, model } = pkg;
 
 const usuarioSchema = new Schema({
@@ -20,4 +20,4 @@ const usuarioSchema = new Schema({
     }
 });
 
-export default model('Usuario', usuarioSchema);
+export default model("Usuario", usuarioSchema);

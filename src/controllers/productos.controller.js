@@ -1,4 +1,4 @@
-import Producto from '../models/productos.model.js';
+import Producto from "../models/productos.model.js";
 
 export const Productos = async (req,res) => {
     try {
@@ -13,13 +13,13 @@ export const CrearProducto = async (req, res) => {
         if (nombre && precio) {
             const ProductoRepetido = await Producto.findOne({ nombre });
             if (ProductoRepetido) {
-                res.status(400).json('El Producto ya existe');
+                res.status(400).json("El Producto ya existe");
             } else {
                 const productos = await Producto.find();
                 new Producto({ ...req.body }).save();
-                res.status(201).json({ msg: 'Producto creado con exito' });
+                res.status(201).json({ msg: "Producto creado con exito" });
             }
-        } else { res.status(400).json({ msg: 'Faltan datos' }); }
+        } else { res.status(400).json({ msg: "Faltan datos" }); }
     } catch (error) { res.status(404).json(error); }
 };
 
@@ -31,9 +31,9 @@ export const ActualizarProductos = async (req, res) => {
             const updates = { ...req.body };
             const options = { new: true };
             await Producto.findByIdAndUpdate(id, updates, options);
-            res.status(200).json({ msg: 'Producto editado con exito' });
+            res.status(200).json({ msg: "Producto editado con exito" });
         }
-        else { res.status(400).json({ msg: 'Faltan datos' }); }
+        else { res.status(400).json({ msg: "Faltan datos" }); }
     } catch (error) { res.status(404).json(error); }
 };
 
@@ -42,7 +42,7 @@ export const EliminarProductos = async (req, res) => {
         const { id } = req.params;
         if (id) {
             await Producto.findByIdAndDelete(id);
-            res.status(200).json({msg: 'El producto fue eliminado con exito' });
-        } else { res.status(400).json({ msg: 'Faltan datos' }); }
+            res.status(200).json({msg: "El producto fue eliminado con exito" });
+        } else { res.status(400).json({ msg: "Faltan datos" }); }
     } catch (error) { res.status(404).json(error); }
 };

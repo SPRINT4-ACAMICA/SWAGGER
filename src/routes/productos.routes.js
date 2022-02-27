@@ -1,14 +1,14 @@
-import { Router } from 'express';
-import * as Productos from '../controllers/productos.controller.js';
+import { Router } from "express";
+import * as Productos from "../controllers/productos.controller.js";
 
 const router = Router();
 
-router.get('/', Productos.Productos);
+router.get("/", Productos.Productos);
 
-router.post('/nuevos', Productos.CrearProducto);
+router.post("/nuevos", Productos.CrearProducto);
 
-router.put('/:id', Productos.ActualizarProductos);
+router.put("/:id", Productos.ActualizarProductos);
 
-router.delete('/Eliminar/:id', Productos.EliminarProductos);
+router.delete("/Eliminar/:id", Productos.EliminarProductos);
 
 export default router;

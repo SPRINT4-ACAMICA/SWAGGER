@@ -1,17 +1,17 @@
-import { Router } from 'express';
-import * as Pedido from '../controllers/pedidos.controller.js';
-import { Verificar } from '../middlewares/token.middleware.js';
+import { Router } from "express";
+import * as Pedido from "../controllers/pedidos.controller.js";
+import { Verificar } from "../middlewares/token.middleware.js";
 
 const router = Router();
 
-//router.get('/', Verificar, Pedido.Pedidos);
+//router.get("/", Verificar, Pedido.Pedidos);
 
-router.post('/Crear', Verificar, Pedido.CrearOrden);
+router.post("/Crear", Verificar, Pedido.CrearOrden);
 
-router.post('/Ordenar/:id', Verificar, Pedido.Ordenar);
+router.post("/Ordenar/:id", Verificar, Pedido.Ordenar);
 
-router.put('/Editar/:id', Verificar, Pedido.ActualizarPedidos);
+router.put("/Editar/:id", Verificar, Pedido.ActualizarPedidos);
 
-router.delete('/Eliminar/:id', Verificar, Pedido.EliminarPedidos);
+router.delete("/Eliminar/:id", Verificar, Pedido.EliminarPedidos);
 
 export default router;

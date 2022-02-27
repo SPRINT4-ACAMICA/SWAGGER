@@ -1,4 +1,4 @@
-import pkg from 'mongoose';
+import pkg from "mongoose";
 const { Schema, model } = pkg;
 
 const PedidoSchema = new Schema({
@@ -21,4 +21,4 @@ const PedidoSchema = new Schema({
     }]
 });
 
-export default model('Pedido', PedidoSchema);
+export default model("Pedido", PedidoSchema);

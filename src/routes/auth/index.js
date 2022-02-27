@@ -1,16 +1,16 @@
-import { Router } from 'express';
-import google from './google.js';
-import facebook from './facebook.js';
-import linkedin from './linkedin.js';
-import github from './github.js';
-import { Token } from '../../controllers/inicioSesion.controller.js';
+import { Router } from "express";
+import google from "./google.js";
+import facebook from "./facebook.js";
+import linkedin from "./linkedin.js";
+import github from "./github.js";
+import { Token } from "../../controllers/inicioSesion.controller.js";
 
 const router = Router();
 
-//router.post('/Login', datosLogin, inicioSesion);
+//router.post("/Login", datosLogin, inicioSesion);
 
-router.post('/sign-up', async function (req, res) {
-  console.log('New request POST to /sign-up');
+router.post("/sign-up", async function (req, res) {
+  console.log("New request POST to /sign-up");
 
   console.log(req.body);
 
@@ -27,11 +27,11 @@ router.post('/sign-up', async function (req, res) {
   };
 });
 
-router.get('/failed', (req, res) => res.send('Hay un error en el login'));
+router.get("/failed", (req, res) => res.send("Hay un error en el login"));
 
-router.use('', google);
-router.use('', facebook);
-router.use('', linkedin);
-router.use('', github);
+router.use("", google);
+router.use("", facebook);
+router.use("", linkedin);
+router.use("", github);
 
 export default router;

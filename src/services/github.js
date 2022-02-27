@@ -1,9 +1,9 @@
-import passport from 'passport';
-import { Strategy as githubStrategy } from 'passport-github';
-import dotenv from 'dotenv';
+import passport from "passport";
+import { Strategy as githubStrategy } from "passport-github";
+import dotenv from "dotenv";
 dotenv.config();
 
-const strategy_name = 'github';
+const strategy_name = "github";
 
 passport.use(
   strategy_name,

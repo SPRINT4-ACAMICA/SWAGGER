@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 const stringConexion = process.env.DATABASE_URL;
@@ -10,6 +10,6 @@ const stringConexion = process.env.DATABASE_URL;
       useNewUrlParser: true, 
       useUnifiedTopology: true 
     });
-    console.log('Conectado a la base de datos', db.connection.name);
+    console.log("Conectado a la base de datos", db.connection.name);
 }
 )();
