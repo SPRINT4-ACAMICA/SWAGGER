@@ -5,11 +5,11 @@ import config from "../config.js";
 
 export async function Token(email, password) {
     const usuario = await Usuario.findOne({ correo: email });
-    const contraseña = bcrypt.compare(password, usuario.contraseña);
-    if (!usuario && !contraseña) {
+    //const contraseña = bcrypt.compare(password, usuario.contraseña);
+    if (!usuario) {
         const usuario = new Usuario({
             correo,
-            contraseña: bcrypt.hashSync(contraseña, 10),
+            contraseña: bcrypt.hashSync(password, 10),
         });
         await usuario.save();
     } else {
