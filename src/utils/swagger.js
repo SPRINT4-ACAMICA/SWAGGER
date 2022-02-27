@@ -736,11 +736,7 @@ export const swaggerOptions = {
         Usuario: {
           type: "object",
           required: [
-            "nombre",
-            "apellido",
             "correo",
-            "telefono",
-            "direccion",
             "contraseña",
           ],
           properties: {
@@ -756,14 +752,6 @@ export const swaggerOptions = {
               type: "string",
               example: "j@gmail.com",
             },
-            telefono: {
-              type: "number",
-              example: 311111,
-            },
-            direccion: {
-              type: "string",
-              example: "Hospital",
-            },
             contraseña: {
               type: "string",
               example: "111111",
@@ -776,7 +764,7 @@ export const swaggerOptions = {
           properties: {
             correo: {
               type: "string",
-              example: "j.j@gmail.com",
+              example: "j@gmail.com",
             },
             contraseña: {
               type: "string",
