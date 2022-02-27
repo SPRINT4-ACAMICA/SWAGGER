@@ -5,8 +5,8 @@ const datosLogin = async (req, res, next) => {
     await sessionSchema.validateAsync(req.body);
     next();
   } catch (error) {
-    console.error(error.details[0].message);
-    res.status(404).json(error.details[0].message);
+    console.error(error);
+    res.status(404).json(error);
   }
 };
 
