@@ -21,11 +21,11 @@ router.post("/sign-up", function (req, res) {
   const usuario = await Usuario.findOne({ correo: req.body.email });
   const contraseña = bcrypt.compare(req.body.password, usuario.contraseña);
   if (!usuario && !contraseña) {
-    const user = new Usuario({
+    const usuario = new Usuario({
       correo,
       contraseña: bcrypt.hashSync(contraseña, 10),
     });
-    await user.save();
+    await usuario.save();
   } else {
     const token = jwt.sign({ id: usuario._id }, config.secret, {
       expiresIn: 60 * 60 * 24,
