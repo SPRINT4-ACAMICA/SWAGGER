@@ -3,14 +3,16 @@ import google from "./google.js";
 import facebook from "./facebook.js";
 import linkedin from "./linkedin.js";
 import github from "./github.js";
-import { Token } from "../../controllers/inicioSesion.controller.js";
+//import { Token } from "../../controllers/inicioSesion.controller.js";
 
 //import  datosLogin from '../../middlewares/login.middleware.js';
 //import  { inicioSesion } from '../../controllers/usuarios.controller.js';
 
 const router = Router();
 
-router.post("/sign-up", async function (req, res) {
+//router.post("/Login", datosLogin, inicioSesion);
+
+/**router.post("/sign-up", async function (req, res) {
   console.log("New request POST to /sign-up");
 
   console.log(req.body);
@@ -30,7 +32,7 @@ router.post("/sign-up", async function (req, res) {
   };
 
   res.json(data);
-});
+});**/
 
 router.get("/failed", (req, res) => res.send("Hay un error en el login"));
 
