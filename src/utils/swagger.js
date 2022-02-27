@@ -13,6 +13,10 @@ export const swaggerOptions = {
     ],
     tags: [
       {
+        name: "Usuarios",
+        description: "Todos los usuarios del sistema",
+      },
+      {
         name: "Login",
         description: "Todos los usuarios del sistema",
       },
@@ -26,6 +30,39 @@ export const swaggerOptions = {
       },
     ],
     paths: {
+      "/usuarios": {
+        get: {
+          tags: ["Usuarios"],
+          summary: "Ver todos los usuarios registrados en el sistema",
+          responses: {
+            200: {
+              description: "Ok",
+              content: {
+                "application/json": {
+                  schema: {
+                    $ref: "#/components/schemas/Producto",
+                  },
+                },
+              },
+            },
+            404: {
+              description: "No Content",
+              content: {
+                "application/json": {
+                  schema: {
+                    type: "object",
+                    properties: {
+                      err: {
+                        type: "string",
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       "/Registro": {
         post: {
           tags: ["Login"],
@@ -90,7 +127,7 @@ export const swaggerOptions = {
           },
         },
       },
-      /**"/Login": {
+      "/Login": {
         post: {
           tags: ["Login"],
           summary: "Para que los usuarios inicien sesión",
@@ -155,7 +192,7 @@ export const swaggerOptions = {
             },
           },
         },
-      },**/
+      },
       "/Eliminar/{id}": {
         delete: {
           tags: ["Login"],
