@@ -11,11 +11,7 @@ Encontrarás funciones como:
 
 # Comienzo 🚀
 
-Para iniciar sesión en [Amazon Web Services](https://aws.amazon.com/es/console/) 
-
-|       Nombre de usuario       |    contraseña   |    ID de cuenta   |
-|-------------------------------|-----------------|-------------------|
-|     jimalaros25@gmail.com     |   J-i-m-m-y-3   |   168415732896    | 
+Para iniciar sesión en [Amazon Web Services](https://aws.amazon.com/es/console/) usa los datos adjuntos en el archivo .csv
 
 ## Instalación 🔧
 
@@ -104,21 +100,10 @@ _Para encontrar los productos que están almacenados, debes dirigirte al "get" q
 
 * IMPORTANTE: Para pagar los pedidos es obligatorio ejecutar el endpoint de mercadopago/orders, una vez ejecutado, en el siguiente [link](https://apicommerce.tk/pago.html) se encontrará con el botón de mercadopago, el cuál esta programado para pagar el último pedido realizado.
 
-* IMPORTANTE: Para pagar los pedidos tienes que tener la sesión iniciada en la cuenta de [mercado pago developers colombia](https://www.mercadolibre.com/jms/mco/lgz/login?platform_id=mp&go=https://www.mercadopago.com.co/developers/es/guides), con los siguientes datos...
+* IMPORTANTE: Para pagar los pedidos tienes que tener la sesión iniciada en la cuenta de [mercado pago developers colombia](https://www.mercadolibre.com/jms/mco/lgz/login?platform_id=mp&go=https://www.mercadopago.com.co/developers/es/guides), con los datos adjuntos en el archivo .csv
 
-|               Correo                   |    contraseña   |
-|----------------------------------------|-----------------|
-|     test_user_88753197@testuser.com    |    qatest6807   |
+_Una vez dentro de mercadopago, podrás colocar las cuotas que decidas y el código de la tarjeta de credito que lo encontrarás en el archivo .csv_
 
-_Una vez dentro de mercadopago, podrás colocar las cuotas que decidas y el código de la tarjeta de credito es 1234_
-
-_Recordatorio_
-
-Datos de acceso a AWS:
-
-|       Nombre de usuario       |    contraseña   |    ID de cuenta   |
-|-------------------------------|-----------------|-------------------|
-|     jimalaros25@gmail.com     |   J-i-m-m-y-3   |   168415732896    | 
 ## Construido con 🛠️
 
 * NodeJS
